@@ -208,11 +208,48 @@
       .home h1 { font-size: 2.8rem; }
       .home p { font-size: 1.1rem; }
     }
+      /* =========================================
+       About Section (독립 섹션 스타일)
+       ========================================= */
+    .about {
+      background-color: #fff;
+    }
+
+    .about-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 60px;
+      text-align: left;
+    }
+
+    .about-text { flex: 1; }
+    .about-text h1 {
+      font-size: 3rem !important;
+      color: var(--dark-green);
+      margin-bottom: 25px !important;
+      text-align: left !important;
+    }
+    .about-text p {
+      font-size: 1.2rem;
+      line-height: 1.7;
+      color: #333;
+      margin-bottom: 15px;
+    }
+    .about-text .sub-desc { font-size: 1rem; color: #666; }
+
+    .about-image { flex: 1.2; }
+    .about-image img {
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+      object-fit: cover;
+    }
 
     /* =======================
        Team Section (Slider)
        ======================= */
-    /* .team { background-color: #f9f9f9; width: 100%; }
+    .team { background-color: #f9f9f9; width: 100%; }
     
     .team h2 {
         font-size: 1.8rem;
@@ -309,14 +346,14 @@
         min-height: 240px; 
         padding: 30px 20px; 
       }
-    } */
+    }
       /* =========================================
        Team Section (Intro Layout + Sliders)
        ========================================= */
-    .team { 
+    /* .team { 
       background-color: #f9f9f9; 
       width: 100%; 
-      padding-top: 100px !important; /* 헤더 공간 */
+      padding-top: 100px !important;
       display: flex !important;
       flex-direction: column !important;
       justify-content: flex-start !important;
@@ -324,7 +361,6 @@
       min-height: 100vh;
     }
 
-    /* 상단 인트로: 텍스트(좌) + 단체사진(우) */
     .people-intro {
       display: flex;
       align-items: center;
@@ -332,7 +368,7 @@
       gap: 50px;
       width: 100%;
       margin-bottom: 50px;
-      text-align: left; /* 텍스트 왼쪽 정렬 */
+      text-align: left; 
     }
 
     .people-text { flex: 1; }
@@ -358,7 +394,6 @@
       object-fit: cover;
     }
 
-    /* 슬라이더 제목 스타일 (PI, Member) */
     .team-title {
       width: 100%;
       text-align: left !important;
@@ -370,7 +405,6 @@
       margin-top: 20px;
     }
 
-    /* 슬라이더 공통 스타일 */
     .slider-wrapper {
       position: relative;
       width: 100%;
@@ -459,7 +493,7 @@
       .swiper.team-slider { padding-bottom: 40px; }
       .swiper-slide { width: auto !important; display: flex; justify-content: center; }
       .team-member { width: 260px; height: auto; min-height: 240px; padding: 30px 20px; }
-    }
+    } */
 
     /* =======================
        Research Section
@@ -839,6 +873,7 @@
     <h1>Inha-United@Soccer</h1>
     <nav>
       <a href="#home">Home</a>
+      <a href="#about">About</a> <!-- About 섹션 추가 -->
       <a href="#team">People</a>
       <a href="#research">Publication</a>
       <a href="#media">Media</a>
@@ -860,19 +895,22 @@
       </div>
     </section>
 
+    <!-- about section 추가 -->
+    <section class="section about" data-anchor="about">
+      <div class="max-w-container about-content">
+        <div class="about-text">
+          <h1>About Inha-United</h1>
+          <p>Inha-United@Soccer is a collaborative team from four major robotics and AI laboratories at Inha University.</p>
+          <p class="sub-desc">We bring together expertise in perception, localization, control, and strategy to create the next generation of soccer robots.</p>
+        </div>
+        <div class="about-image">
+          <img src="img/temp.jpeg" alt="Inha-United Team Photo">
+        </div>
+      </div>
+    </section>
+
     <section class="section team" data-anchor="team">
       <div class="max-w-container">
-
-        <div class="people-intro">
-          <div class="people-text">
-            <h1>Meet Our Team</h1>
-            <p>Inha-United@Soccer is a collaborative team from four major robotics and AI laboratories at Inha University.</p>
-            <p class="sub-desc">We bring together expertise in perception, localization, control, and strategy to create the next generation of soccer robots.</p>
-          </div>
-          <div class="people-image">
-            <img src="img/temp.jpeg" alt="Inha-United Team Photo">
-          </div>
-        </div>
         
         <h2>Principal Investigator</h2>
         <div class="slider-wrapper">
