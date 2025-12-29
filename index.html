@@ -212,6 +212,66 @@
     /* =======================
        Team Section (Slider)
        ======================= */
+
+      /* =======================
+       Team Section (Slider + Intro 승재욱 추가) 
+       ======================= */
+    .team { background-color: #f9f9f9; width: 100%; padding-top: 100px !important; }
+    
+    /* [NEW] People 상단 레이아웃 */
+    .people-intro {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 50px;
+      width: 100%;
+      margin-bottom: 50px;
+      text-align: left; /* 텍스트 왼쪽 정렬 */
+    }
+
+    .people-text {
+      flex: 1;
+    }
+    .people-text h1 {
+      font-size: 3rem !important;
+      color: var(--dark-green);
+      margin-bottom: 20px !important;
+      text-align: left !important;
+    }
+    .people-text p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      color: #333;
+      margin-bottom: 15px;
+    }
+    .people-text .sub-desc {
+      font-size: 1rem;
+      color: #666;
+    }
+
+    .people-image {
+      flex: 1.2;
+    }
+    .people-image img {
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+      object-fit: cover;
+    }
+
+    /* 제목 스타일 미세 조정 */
+    .team-title {
+      width: 100%;
+      text-align: left !important;
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      color: var(--dark-green);
+      border-left: 5px solid var(--primary-green);
+      padding-left: 15px;
+      margin-top: 30px;
+    }
+    /* 여기까지가 승재욱 추가*/
+
     .team { background-color: #f9f9f9; width: 100%; }
     
     .team h2 {
@@ -309,6 +369,34 @@
         min-height: 240px; 
         padding: 30px 20px; 
       }
+    }
+      /* =========================================
+       [반응형] 모바일 설정 (900px 이하)
+       ========================================= */
+    @media (max-width: 900px) {
+      .people-intro {
+        flex-direction: column; /* 위아래 배치 */
+        text-align: center;
+        gap: 30px;
+        margin-bottom: 40px;
+      }
+      .people-text h1 {
+        font-size: 2.2rem !important;
+        text-align: center !important;
+      }
+      .people-image {
+        width: 100%;
+      }
+      .team-title {
+        text-align: center !important;
+        border-left: none;
+        padding-left: 0;
+      }
+      
+      /* 기존 슬라이더 반응형 유지 */
+      .slider-wrapper { padding: 0; }
+      .swiper-button-next, .swiper-button-prev { display: none; }
+      .team-member { width: 260px; height: auto; min-height: 240px; padding: 30px 20px; }
     }
 
     /* =======================
@@ -702,6 +790,18 @@
   <div id="fullpage">
 
     <section class="section home" data-anchor="home">
+      <!-- 단체 사진 추가 -->
+      <div class="people-intro">
+        <div class="people-text">
+          <h1>Meet Our Team</h1>
+          <p>Inha-United@Soccer is a collaborative team from four major robotics and AI laboratories at Inha University.</p>
+          <p class="sub-desc">We bring together expertise in perception, localization, control, and strategy to create the next generation of soccer robots.</p>
+        </div>
+        <div class="people-image">
+          <img src="twoK1_seatdown.jpeg" alt="Inha-United Team">
+        </div>
+      </div>
+
       <div class="max-w-container">
         <h1>Welcome!</h1>
         <p>We are <b>Inha-United@Soccer</b> ⚽️</p>
