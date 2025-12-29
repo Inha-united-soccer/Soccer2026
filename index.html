@@ -162,29 +162,30 @@
     /* =======================
        Home Section (팀 사진 배경 버전)
        ======================= */
-    /* .home {
+    .home {
       background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), 
                   url('twoK1_seatdown.jpeg'); 
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      color: #fff;
+      color: #fff; /* 기본 글자색 흰색으로 변경 */
     }
 
     .home h1 { 
       margin-bottom: 20px; 
-      font-size: 4rem; 
+      font-size: 4rem; /* 조금 더 크게 강조 */
       color: #ffffff;
-      text-shadow: 0 4px 10px rgba(0,0,0,0.3); 
+      text-shadow: 0 4px 10px rgba(0,0,0,0.3); /* 가독성을 위한 그림자 */
     }
 
     .home p { 
       font-size: 1.4rem; 
       margin-bottom: 40px; 
-      color: rgba(255, 255, 255, 0.9); 
+      color: rgba(255, 255, 255, 0.9); /* 본문은 살짝 투명한 흰색 */
       text-shadow: 0 2px 5px rgba(0,0,0,0.3);
     }
 
+    /* 버튼 스타일 유지 (배경이 어두워졌으므로 초록색이 더 잘 보입니다) */
     .home button {
       background-color: var(--primary-green);
       color: white;
@@ -205,67 +206,6 @@
     @media (max-width: 900px) {
       .home h1 { font-size: 2.8rem; }
       .home p { font-size: 1.1rem; }
-    }*/
-
-/* 1. Home 섹션 기본 설정 (배경은 깔끔하게) */
-    .home {
-      background: var(--bg-gradient-home);
-      text-align: left; /* 기본 정렬을 왼쪽으로 */
-    }
-
-    /* 2. 좌우 배치를 위한 Flex 컨테이너 */
-    .home-content {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-      gap: 50px; /* 글과 이미지 사이 간격 */
-      width: 100%;
-    }
-
-    /* 3. 왼쪽 텍스트 스타일 */
-    .home-text {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start; /* 글자들을 왼쪽 정렬 */
-    }
-    .home-text h1 { font-size: 3.5rem; margin-bottom: 20px; color: var(--dark-green); }
-    .home-text p { font-size: 1.4rem; margin-bottom: 10px; }
-    .home-text .sub-desc { font-size: 1.1rem; color: #666; margin-bottom: 40px; }
-
-    /* 4. 오른쪽 이미지 스타일 */
-    .home-image {
-      flex: 1.2; /* 이미지가 글보다 조금 더 넓게 */
-      display: flex;
-      justify-content: center;
-    }
-    .home-image img {
-      width: 100%;
-      max-width: 700px;
-      border-radius: 20px; /* 이미지 모서리 둥글게 */
-      box-shadow: 0 15px 35px rgba(0,0,0,0.15); /* 부드러운 그림자 */
-      object-fit: cover;
-    }
-
-    /* =========================================
-       [반응형] 모바일에서는 다시 위아래로 배치
-       ========================================= */
-    @media (max-width: 900px) {
-      .home-content {
-        flex-direction: column; /* 위아래 배치 */
-        text-align: center;
-        gap: 30px;
-      }
-      .home-text {
-        align-items: center; /* 텍스트 중앙 정렬 */
-        order: 1; /* 글이 먼저 나오게 */
-      }
-      .home-image {
-        order: 2; /* 이미지가 아래에 나오게 */
-        width: 100%;
-      }
-      .home-text h1 { font-size: 2.5rem; }
     }
 
     /* =======================
