@@ -334,7 +334,7 @@
     .team h2 {
         font-size: 1.8rem;
         margin-bottom: 20px;
-        color: var(--dark-blue);
+        color: var(--dark-green);
         margin-top: 10px;
     }
 
@@ -371,7 +371,7 @@
       width: 90px; height: 90px;
       border-radius: 50%;
       object-fit: cover;
-      border: 3px solid rgba(0, 120, 255, 0.3);
+      border: 3px solid rgba(23, 188, 97, 0.3);
       margin-bottom: 10px;
     }
     .team-member h3 { font-size: 1.1em; font-weight: 600; margin: 5px 0; }
@@ -379,12 +379,12 @@
 
     .social-icons { display: flex; justify-content: center; gap: 10px; }
     .social-icons a { color: #999; font-size: 1.1em; }
-    .social-icons a:hover { color: var(--primary-blue); transform: scale(1.2); }
+    .social-icons a:hover { color: var(--primary-green); transform: scale(1.2); }
 
     .swiper-button-prev,
     .swiper-button-next {
       width: 40px; height: 40px;
-      color: var(--primary-blue);
+      color: var(--primary-green);
       background: rgba(255,255,255,0.8);
       border-radius: 50%;
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
@@ -454,7 +454,7 @@
     .year-header {
       font-size: 1.8rem;
       font-weight: 700;
-      color: var(--primary-blue);
+      color: var(--primary-green);
       border-bottom: 2px solid #eee;
       margin-top: 40px;
       margin-bottom: 20px;
@@ -478,13 +478,13 @@
       text-align: left;
     }
     .pub-item:hover {
-      border-left-color: var(--primary-blue);
+      border-left-color: var(--primary-green);
       transform: translateY(-3px);
       box-shadow: 0 5px 15px rgba(0,0,0,0.05);
     }
     .pub-venue {
       font-size: 0.9rem;
-      color: var(--primary-blue);
+      color: var(--primary-green);
       font-weight: 700;
       margin-bottom: 5px;
     }
@@ -498,7 +498,7 @@
     
     .pub-links a {
       font-size: 0.9rem;
-      color: var(--primary-blue);
+      color: var(--primary-green);
       font-weight: 600;
       margin-right: 15px;
     }
@@ -518,13 +518,13 @@
        ======================= */
     .opensource { background-color: #fff; }
     .opensource p.link-text { font-size: 1.3rem; margin-top: 30px; }
-    .opensource a { color: var(--primary-blue); font-weight: 600; text-decoration: underline; }
+    .opensource a { color: var(--primary-green); font-weight: 600; text-decoration: underline; }
 
     /* Media Section */
     .media { background-color: #fff; }
-    .media a { color: var(--primary-blue); font-weight: 600; }
-    
-    .video-container {
+    .media a { color: var(--primary-green); font-weight: 600; }
+
+    /* .video-container {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -557,6 +557,45 @@
     @media (max-width: 480px) {
       .video-container { flex-direction: column; }
       .media video { width: 80%; margin-bottom: 20px; }
+    } */
+
+    /* 기존 video-container 스타일을 media-grid로 변경 및 확장 */
+    .media-grid {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap; 
+      gap: 2vw; /* 간격을 약간 조절 */
+      margin-top: 30px;
+      width: 100%;
+      max-width: 1200px; 
+      padding: 10px; 
+    }
+
+    /* [수정 포인트] 사진(img)과 비디오(video) 공용 스타일 */
+    .media-item {
+      width: 30%; /* 3개가 한 줄에 나오도록 설정 */
+      min-width: 250px; 
+      max-width: 360px; 
+      max-height: 55vh; 
+      aspect-ratio: 9 / 16; /* 세로형 비율 유지 */
+      object-fit: cover;    /* 비율이 달라도 영역을 꽉 채움 */
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      background: #000;
+      transition: transform 0.3s;
+      display: block; 
+    }
+
+    .media-item:hover { transform: scale(1.02); }
+
+    /* 반응형 설정: 화면이 좁아지면 2개, 1개씩 보이도록 */
+    @media (max-width: 900px) {
+      .media-grid { gap: 15px; }
+      .media-item { width: 45%; min-width: 160px; }
+    }
+    @media (max-width: 480px) {
+      .media-item { width: 85%; }
     }
 
     /* =======================
@@ -570,7 +609,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background: linear-gradient(to bottom, #ffffff 0%, #ffffff 60%, #cce7ff 100%);
+      background: linear-gradient(to bottom, #ffffff 0%, #ffffff 60%, #dff8ea 100%);
     }
     
     .contact-container {
