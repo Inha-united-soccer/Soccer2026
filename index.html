@@ -225,11 +225,11 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 60px;
+      gap: 40px;
       text-align: left;
     }
 
-    .about-text { flex: 1; }
+    .about-text { flex: 1.2; }
     .about-text h1 {
       font-size: 3rem !important;
       color: var(--dark-green);
@@ -244,14 +244,34 @@
     }
     .about-text .sub-desc { font-size: 1rem; color: #666; }
 
-    .about-image { flex: 1.2; }
+    .about-image { 
+      flex: 0.8; 
+      max-width: 500px;
+      position: relative;
+    }
     .about-image img {
       width: 100%;
       border-radius: 20px;
       box-shadow: 0 15px 35px rgba(0,0,0,0.12);
       object-fit: cover;
     }
+    .about-slider img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* 영역에 맞게 꽉 채움 */
+      display: block;
+    }
 
+    /* 슬라이더 점(Pagination) 색상 변경 */
+    .about-slider .swiper-pagination-bullet-active {
+      background: var(--primary-green);
+    }
+    @media (max-width: 900px) {
+      .about-content { flex-direction: column; text-align: center; }
+      .about-slider { height: 250px; }
+      .about-image { width: 100%; max-width: 400px; }
+    }
+    
     /* =======================
        Team Section (Slider)
        ======================= */
@@ -909,8 +929,19 @@
           <p>Inha-United@Soccer is a collaborative team from four major robotics and AI laboratories at Inha University.</p>
           <p class="sub-desc">We bring together expertise in perception, localization, control, and strategy to create the next generation of soccer robots.</p>
         </div>
+        <!-- swiper로 변경해서 이미지 넘어가게끔 구현 -->
         <div class="about-image">
-          <img src="img/soccer_team.jpeg" alt="Inha-United Team Photo">
+          <div class="swiper about-slider">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="img/inha-united.jpg" alt="Inha-United Team Photo 1">
+              </div>
+              <div class="swiper-slide">
+                <img src="img/soccer_team.jpeg" alt="Inha-United Team Photo 2">
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
         </div>
       </div>
     </section>
@@ -1357,23 +1388,24 @@
   </div>
 
   <script>
-    // 1. FullPage.js Init
+    // 1. FullPage.js 초기화
     new fullpage('#fullpage', {
       autoScrolling: true,
       scrollOverflow: true,
       fitToSection: false,
-      anchors: ['home', 'team', 'Publication', 'media', 'opensource', 'contact'],
-      navigationTooltips: ['Home', 'Team', 'Publication', 'Media','', 'Contact'],
+      // [수정] 'about'을 두 번째 순서에 추가했습니다.
+      anchors: ['home', 'about', 'team', 'Publication', 'media', 'opensource', 'contact'],
+      navigationTooltips: ['Home', 'About', 'People', 'Publication', 'Media', '', 'Contact'],
       navigation: true,
       showActiveTooltip: true,
       credits: { enabled: false },
-      // normalScrollElements: '.swiper, .video-container, .research-list',
+      // 슬라이더 영역에서 마우스 휠이 페이지 전환 대신 슬라이드 작동을 하도록 설정
       normalScrollElements: '.swiper, .media-grid, .research-list',
     });
 
-    // 2. Swiper Slider Init
-
-    // PC Responsive Settings (여기서만 Grid 적용!)
+    // 2. Swiper 슬라이더 초기화
+    
+    // PC 공통 설정
     const pcBreakpoint = {
         901: {
             slidesPerView: 5,
@@ -1382,20 +1414,32 @@
         }
     };
 
-    // --- A. Advisor Slider (Principal Investigator) ---
+    // --- A. [NEW] About Section Slider ---
+    // 이미지 2개가 부드럽게 교체되는 슬라이더입니다.
+    new Swiper('.about-slider', {
+        loop: true,
+        effect: 'fade', // 부드럽게 겹치며 바뀌는 효과
+        fadeEffect: { crossFade: true },
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: '.about-slider .swiper-pagination',
+            clickable: true,
+        },
+    });
+
+    // --- B. Advisor Slider (Principal Investigator) ---
     const advisorSliderEl = document.querySelector('.advisor-slider');
-    
     new Swiper(advisorSliderEl, {
         observer: true,
         observeParents: true,
         watchOverflow: true,
-        
-        // [핵심] 모바일 설정
-        loop: false,            // 교수님 목록은 보통 반복 안 함
-        slidesPerView: 'auto',  // CSS에서 지정한 width(160px)를 따름
-        centeredSlides: true,  // 왼쪽부터 정렬 (모바일에서 자연스러움)
-        spaceBetween: 20,       // 카드 사이 간격
-        
+        loop: false,
+        slidesPerView: 'auto',
+        centeredSlides: true,
+        spaceBetween: 20,
         pagination: {
           el: advisorSliderEl.querySelector('.swiper-pagination'),
           clickable: true,
@@ -1404,8 +1448,6 @@
           nextEl: advisorSliderEl.parentElement.querySelector('.swiper-button-next'),
           prevEl: advisorSliderEl.parentElement.querySelector('.swiper-button-prev'),
         },
-        
-        // [PC 설정 유지] 901px 이상에서는 격자(Grid) 모드
         breakpoints: {
             901: {
                 slidesPerView: 4,
@@ -1415,27 +1457,21 @@
         }
     });
 
-    // --- B. Member Slider (Loop TRUE) ---
+    // --- C. Member Slider (Loop TRUE) ---
     const memberSliderEl = document.querySelector('.member-slider');
     new Swiper(memberSliderEl, {
         observer: true,
         observeParents: true,
-
-        loop: true,              
-        autoplay: {              
+        loop: true,
+        autoplay: {
           delay: 3000,
           disableOnInteraction: false,
           pauseOnMouseEnter: true,
         },
-
-        // 모바일: 중앙 정렬 (Loop니까 중앙이 자연스러움)
-        centeredSlides: true, 
+        centeredSlides: true,
         slidesPerView: 'auto',
         spaceBetween: 20,
         centerInsufficientSlides: true,
-        
-        // ★ [수정됨] 여기도 grid 설정 삭제!
-
         pagination: {
           el: memberSliderEl.querySelector('.swiper-pagination'),
           clickable: true,
