@@ -207,11 +207,9 @@
     .home .max-w-container {
       /* PC에서는 중앙보다 약간 아래로 (vh 단위를 써서 화면 비율에 맞춤) */
       padding-top: 40vh; 
+      padding-left: 20vw;
       justify-content: flex-start; /* 중앙 정렬 해제하고 패딩으로 조절 */
-      /* --- 추가 및 변경된 부분 --- */
-      align-items: flex-end;    /* 자식 요소들을 오른쪽 끝으로 밀어냄 */
-      padding-right: 10%;       /* 화면 맨 끝에 붙지 않도록 적절한 여백 추가 */
-      text-align: right;        /* 텍스트 자체도 오른쪽 정렬 */
+      
     }
 
     /* @media (max-width: 900px) {
@@ -294,9 +292,7 @@
       /* 1. Home 모바일 패딩 축소 */
       .home .max-w-container {
         padding-top: 30vh; /* 모바일에서는 조금 덜 밀어내기 */
-        align-items: center;    /* 모바일에서는 다시 중앙으로 */
-        padding-right: 0;       /* PC 여백 제거 */
-        text-align: center;     /* 텍스트 중앙 정렬 */
+        padding-left: 0;
       }
       .home h1 { font-size: 2.5rem; }
       .home p { font-size: 1.1rem; }
