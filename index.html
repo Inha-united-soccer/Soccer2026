@@ -203,6 +203,12 @@
       background-color: #129e52; 
       transform: translateY(-2px);
     }
+    /* Home Section 내부의 컨테이너만 타겟팅 */
+    .home .max-w-container {
+    /* 현재 중앙에서 150px만큼 더 아래로 밀어냅니다. */
+    /* 수치를 더 높이면 더 아래로 내려갑니다. (예: 200px, 20vh 등) */
+      padding-top: 150px; 
+    }
 
     @media (max-width: 900px) {
       .home h1 { font-size: 2.8rem; }
