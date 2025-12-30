@@ -544,25 +544,47 @@
       .media video { width: 80%; margin-bottom: 20px; }
     } */
 
-    /* YouTube Card 스타일 */
-    .youtube-card {
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    /* =========================
+      유튜브 북마크를 위한 스타일
+      ========================= */
+    .media-youtube-full {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto 60px auto;
     }
 
-    .youtube-card i {
-      font-size: 4.5rem;
-      color: #ff0000;
-      background: rgba(255, 255, 255, 0.85);
+    .youtube-placeholder {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9; /* 유튜브 정석 비율 */
+      border-radius: 20px;
+      overflow: hidden;
+      cursor: pointer;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+
+    .youtube-placeholder img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .youtube-play-button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(255,255,255,0.9);
       border-radius: 50%;
-      padding: 18px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+      padding: 22px;
+      font-size: 4rem;
+      color: #ff0000;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.25);
       transition: transform 0.25s ease;
     }
 
-    .youtube-card:hover i {
-      transform: scale(1.15);
+    .youtube-placeholder:hover .youtube-play-button {
+      transform: translate(-50%, -50%) scale(1.15);
     }
 
     /* 기존 video-container 스타일을 media-grid로 변경 및 확장 */
@@ -1250,6 +1272,23 @@
         </div>
       </div>
     </section> -->
+
+        <!-- 유튜브 북마크 추가 
+            수정 사항 : 실제 유튜브 영상 ID로 변경 필요(data-video-id)
+                      src 유튜브 썸네일 링크로 변경 필요 
+        -->
+        <div class="media-youtube-full">
+          <div class="youtube-placeholder" data-video-id="IE_m4ILwg-4">
+            <img
+              src="https://img.youtube.com/vi/IE_m4ILwg-4/maxresdefault.jpg"
+              alt="YouTube Thumbnail"
+            />
+            <div class="youtube-play-button">
+              <i class="fab fa-youtube"></i>
+            </div>
+          </div>
+        </div>
+
         <div class="media-grid">
           <img src="img/twoK1_seatdown.jpeg" alt="Robot Photo" class="media-item" onerror="this.src='https://via.placeholder.com/360x640?text=Robot+Photo'">
           
@@ -1263,23 +1302,6 @@
             Your browser does not support video.
           </video>
         </div>
-        <!-- 유튜브 북마크 추가
-        수정 부분 : href의  https://www.youtube.com/watch?v= 뒤에 영상 ID 넣기
-        썸네일 이미지 링크(background-image) : https://img.youtube.com/vi/영상ID/hqdefault.jpg  
-        -->
-        <a
-          href="https://www.youtube.com/watch?v=IE_m4ILwg-4" 
-          target="_blank"
-          class="media-item youtube-card"
-          style="
-            background-image: url('https://img.youtube.com/vi/IE_m4ILwg-4/hqdefault.jpg');
-            background-size: cover;
-            background-position: center;
-            position: relative;
-          "
-        >
-          <i class="fab fa-youtube"></i>
-        </a>
       </div>
     </section>
 
@@ -1411,6 +1433,29 @@
           prevEl: memberSliderEl.parentElement.querySelector('.swiper-button-prev'),
         },
         breakpoints: pcBreakpoint
+    });
+  </script>
+
+  <script>
+    // 유튜브 북마크를 위한 셋팅 
+    document.addEventListener("DOMContentLoaded", () => {
+      const placeholder = document.querySelector(".youtube-placeholder");
+
+      placeholder.addEventListener("click", () => {
+        const videoId = placeholder.dataset.videoId;
+
+        const iframe = document.createElement("iframe");
+        iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+        iframe.allow =
+          "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+        iframe.allowFullscreen = true;
+        iframe.style.width = "100%";
+        iframe.style.height = "100%";
+        iframe.style.border = "none";
+
+        placeholder.innerHTML = "";
+        placeholder.appendChild(iframe);
+      });
     });
   </script>
 </body>
