@@ -163,15 +163,27 @@
        Home Section (팀 사진 배경 버전)
        ======================= */
     .home {
-      padding-top: 160px; /* header 높이만큼 */
-      /* [중요] 'team_photo.jpg'를 실제 팀 사진 파일 이름으로 바꾸세요 */
-      background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), /* 흐림도 조정 */
-                  url('IMG_3952.jpg'); 
+      position: relative;
+      padding-top: 80px; /* 콘텐츠용 */
+      overflow: hidden;
+    }
+
+    .home::before {
+      content: "";
+      position: absolute;
+      top: 80px;           /* header 아래부터 시작 */
+      left: 0;
+      right: 0;
+      bottom: 0;
+
+      background:
+        linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+        url('IMG_3952.jpg');
       background-size: cover;
       background-position: top center;
       background-repeat: no-repeat;
-      
-      color: #fff; /* 기본 글자색 흰색으로 변경 */
+
+      z-index: -1;
     }
 
     .home h1 { 
