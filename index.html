@@ -99,10 +99,6 @@
       position: relative;
       overflow: hidden;
     }
-    /* Fixed header 보정: Home 제외 모든 섹션 상단바 고려해서 콘텐츠 내리기 */
-    .section:not(.home) .max-w-container {
-      padding-top: 80px; /* header 80px */
-    }
 
     /* PC Layout Fixer Container */
     .max-w-container {
@@ -589,6 +585,7 @@
       margin: 0 auto;
       padding-left: 0;
       padding-right: 0;
+      padding-top: 80px;
     }
     .media-grid {
       width: 100%;
