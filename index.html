@@ -611,16 +611,33 @@
 
     .media-item:hover { transform: scale(1.02); }
 
-    /* 반응형 설정: 화면이 좁아지면 2개, 1개씩 보이도록 */
     @media (max-width: 900px) {
       .section.media .max-w-container {
         padding-top: 0;
       }
-      .media-grid { gap: 15px; }
-      .media-item { width: 45%; min-width: 160px; }
+
+      .media-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+      }
+
+      .media-item {
+        width: 100%;
+        min-width: 0;
+      }
     }
     @media (max-width: 480px) {
-      .media-item { width: 85%; }
+      .media-grid {
+        display: flex;           /* grid 끔 */
+        flex-direction: column;  /* 1개씩 */
+        gap: 20px;
+      }
+
+      .media-item {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+      }
     }
 
     /* =======================
