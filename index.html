@@ -99,6 +99,10 @@
       position: relative;
       overflow: hidden;
     }
+    /* Fixed header 보정: Home 제외 모든 섹션 상단바 고려해서 콘텐츠 내리기 */
+    .section:not(.home) .max-w-container {
+      padding-top: 80px; /* header 80px */
+    }
 
     /* PC Layout Fixer Container */
     .max-w-container {
@@ -135,7 +139,7 @@
       padding-top: 80px; /* 콘텐츠용 */
       overflow: hidden;
     }
-
+    /* 위에 상단바로 잘리는거 방지하기 위해 80픽셀 패딩 */
     .home::before {
       content: "";
       position: absolute;
