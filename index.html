@@ -145,7 +145,7 @@
       bottom: 0;
 
       background:
-        linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+        linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
         url('img/main_robot.jpg');
       background-size: cover;
       background-position: top center;
@@ -187,11 +187,10 @@
     }
     /* Home Section 내부의 컨테이너만 타겟팅 */
     .home .max-w-container {
-      /* PC에서는 중앙보다 약간 아래로 (vh 단위를 써서 화면 비율에 맞춤) */
-      padding-top: 40vh; 
-      /* padding-left: 25vw; */
-      justify-content: flex-start; /* 중앙 정렬 해제하고 패딩으로 조절 */
-      
+      display: flex;              /* 혹시 빠져 있으면 필수 */
+      justify-content: center;    /* 세로 중앙 */
+      align-items: center;        /* 가로 중앙 */
+
     }
 
     /* @media (max-width: 900px) {
