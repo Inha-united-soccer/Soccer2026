@@ -788,9 +788,12 @@
 
     /* Media Item w/ Title Style */
     .media-card {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
+      width: 60%;
+      /* ⭐ 기준 폭 Match YouTube bookmark */
+      max-width: 900px;
+      /* PC에서 너무 커지지 않게 */
+      margin: 0 auto;
+      margin: 0 auto;
     }
 
     .media-title {
@@ -844,8 +847,7 @@
       /* 세로로 1개씩 */
       gap: 40px;
       /* 카드 간 간격 */
-      align-items: center;
-      /* 가운데 정렬 */
+      /* align-items: center; [User Request] Release center alignment */
     }
 
     /* [수정 포인트] 사진(img)과 비디오(video) 공용 스타일 */
@@ -855,8 +857,9 @@
       min-width: 0;
       max-width: none;
       max-height: 55vh;
-      aspect-ratio: 9 / 16;
-      /* 세로형 비율 유지 */
+      aspect-ratio: 16 / 9;
+      /* [Modified] 16:9 Landscape */
+      /* 세로형 비율 유지 -> 가로형으로 변경 */
       object-fit: cover;
       /* 비율이 달라도 영역을 꽉 채움 */
       border-radius: 16px;
