@@ -417,8 +417,12 @@
       }
 
       .about-slider {
-        height: 280px;
-        /* 모바일에서 사진이 확실히 보이게 높이 지정 */
+        width: 100%;
+        /* [Fix] Use full width on mobile */
+        height: auto;
+        /* [Fix] Remove fixed height */
+        aspect-ratio: 16 / 10;
+        /* Maintain ratio */
         margin-bottom: 20px;
       }
     }
