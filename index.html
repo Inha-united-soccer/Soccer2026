@@ -286,7 +286,8 @@
       /* [Fix] Explicitly set to row to override max-w-container's column */
       align-items: center;
       justify-content: space-between;
-      gap: 40px;
+      gap: 30px;
+      /* [Modified] Reduced gap from 40px */
       text-align: left;
       width: 100%;
       height: auto;
@@ -294,7 +295,8 @@
     }
 
     .about-text {
-      flex: 1;
+      flex: 1.2;
+      /* [Modified] Increased text width (60%) */
       /* 50% width */
     }
 
@@ -318,7 +320,8 @@
     }
 
     .about-image {
-      flex: 1;
+      flex: 0.8;
+      /* [Modified] Reduced image column width (40%) */
       /* 50% width */
       width: 100%;
       /* max-width 제거 또는 flex 비율에 맡김 */
@@ -335,7 +338,8 @@
     /* 슬라이더 높이를 PC에서 명시적으로 지정 -> 비율 유지로 변경 */
     /* 슬라이더 높이를 PC에서 명시적으로 지정 -> 비율 유지로 변경 */
     .about-slider {
-      width: 55%;
+      width: 90%;
+      /* [Modified] Increased relative width to fill narrow column */
       /* [Modified] Reduce width to 80% */
       margin: 0 auto;
       /* [Modified] Center alignment */
