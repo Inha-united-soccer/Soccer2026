@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+
   <!-- 썸네일 제거 -->
   <meta property="og:image" content="https://via.placeholder.com/1x1.png" />
   <meta name="twitter:card" content="summary" />
@@ -42,31 +43,51 @@
       --bg-gradient-header: linear-gradient(to bottom, #ffffff 0%, #ffffff 100%);
       --bg-gradient-home: linear-gradient(to bottom, #ffffff 0%, #ffffff 100%);
     }
-    
+
     * {
       box-sizing: border-box;
       font-family: 'Pretendard', sans-serif;
-      margin: 0; padding: 0;
+      margin: 0;
+      padding: 0;
       word-break: keep-all;
     }
-    
+
     body {
       background-color: #fff;
       color: #333;
     }
 
-    .fp-watermark { display: none !important; }
-    a { text-decoration: none; color: inherit; transition: 0.3s; }
-    ul { list-style: none; padding: 0; }
-    .fa-scholar::before { content: "\f19d"; }
-    .fa-homepage::before { content: "\f015"; }
+    .fp-watermark {
+      display: none !important;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: 0.3s;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .fa-scholar::before {
+      content: "\f19d";
+    }
+
+    .fa-homepage::before {
+      content: "\f015";
+    }
 
     /* =======================
        Header
        ======================= */
     header {
       position: fixed;
-      top: 0; left: 0; right: 0;
+      top: 0;
+      left: 0;
+      right: 0;
       height: 80px;
       display: flex;
       align-items: center;
@@ -76,13 +97,33 @@
       backdrop-filter: blur(10px);
       z-index: 100;
     }
-    header h1 { font-size: 1.6rem; font-weight: 700; color: #000; }
-    nav a { margin-left: 25px; color: var(--dark-green); font-size: 1.5rem; font-weight: 500; }
-    nav a:hover { color: var(--primary-green); }
+
+    header h1 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #000;
+    }
+
+    nav a {
+      margin-left: 25px;
+      color: var(--dark-green);
+      font-size: 1.5rem;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: var(--primary-green);
+    }
 
     @media (max-width: 900px) {
-      header { padding: 0 20px; justify-content: center; }
-      nav { display: none; }
+      header {
+        padding: 0 20px;
+        justify-content: center;
+      }
+
+      nav {
+        display: none;
+      }
     }
 
     /* =======================
@@ -94,10 +135,10 @@
       justify-content: center;
       align-items: center;
       text-align: center;
-      height: calc(var(--vh, 1vh) * 100); 
+      min-height: calc(var(--vh, 1vh) * 100);
       padding: 0 20px;
       position: relative;
-      overflow: hidden;
+      /* overflow: hidden; */
     }
 
     /* PC Layout Fixer Container */
@@ -115,14 +156,14 @@
     .section h1 {
       font-size: 2.8rem;
       font-weight: 700;
-      margin-bottom: 20px; 
+      margin-bottom: 20px;
       margin-top: 0;
     }
-    
+
     .section p.desc {
       font-size: 1.15rem;
       max-width: 700px;
-      margin: 0 auto 25px auto; 
+      margin: 0 auto 25px auto;
       line-height: 1.6;
       color: #555;
     }
@@ -132,14 +173,17 @@
        ======================= */
     .home {
       position: relative;
-      padding-top: 80px; /* 콘텐츠용 */
+      padding-top: 80px;
+      /* 콘텐츠용 */
       overflow: hidden;
     }
+
     /* 위에 상단바로 잘리는거 방지하기 위해 80픽셀 패딩 */
     .home::before {
       content: "";
       position: absolute;
-      top: 80px;           /* header 아래부터 시작 */
+      top: 80px;
+      /* header 아래부터 시작 */
       left: 0;
       right: 0;
       bottom: 0;
@@ -154,18 +198,21 @@
       z-index: -1;
     }
 
-    .home h1 { 
-      margin-bottom: 20px; 
-      font-size: 4rem; /* 조금 더 크게 강조 */
+    .home h1 {
+      margin-bottom: 20px;
+      font-size: 4rem;
+      /* 조금 더 크게 강조 */
       color: #ffffff;
-      text-shadow: 0 4px 10px rgba(0,0,0,0.3); /* 가독성을 위한 그림자 */
+      text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      /* 가독성을 위한 그림자 */
     }
 
-    .home p { 
-      font-size: 1.4rem; 
-      margin-bottom: 20px; 
-      color: rgba(255, 255, 255, 0.9); /* 본문은 살짝 투명한 흰색 */
-      text-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    .home p {
+      font-size: 1.4rem;
+      margin-bottom: 20px;
+      color: rgba(255, 255, 255, 0.9);
+      /* 본문은 살짝 투명한 흰색 */
+      text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
     }
 
     /* 버튼 스타일 유지 (배경이 어두워졌으므로 초록색이 더 잘 보입니다) */
@@ -181,15 +228,20 @@
       transition: 0.3s;
       box-shadow: 0 4px 15px rgba(23, 188, 97, 0.3);
     }
-    .home button:hover { 
-      background-color: #129e52; 
+
+    .home button:hover {
+      background-color: #129e52;
       transform: translateY(-2px);
     }
+
     /* Home Section 내부의 컨테이너만 타겟팅 */
     .home .max-w-container {
-      display: flex;              /* 혹시 빠져 있으면 필수 */
-      justify-content: center;    /* 세로 중앙 */
-      align-items: center;        /* 가로 중앙 */
+      display: flex;
+      /* 혹시 빠져 있으면 필수 */
+      justify-content: center;
+      /* 세로 중앙 */
+      align-items: center;
+      /* 가로 중앙 */
 
     }
 
@@ -197,14 +249,14 @@
       .home h1 { font-size: 2.8rem; }
       .home p { font-size: 1.1rem; }
     } */
-      /* =========================================
+    /* =========================================
        About Section (독립 섹션 스타일)
        ========================================= */
     .about {
       /* 헤더 높이만큼 여백을 주어 글자가 가려지지 않게 함 */
       padding-top: 80px !important;
       background-color: #fff;
-      overflow-y: auto !important; /* 내용이 많으면 내부 스크롤 허용 */
+      /* overflow-y: auto !important; */
     }
 
     .about-content {
@@ -214,50 +266,62 @@
       gap: 40px;
       text-align: left;
       width: 100%;
-      height: auto; /* 고정 높이 해제 */
+      height: auto;
+      /* 고정 높이 해제 */
     }
 
-    .about-text { flex: 1.0; }
+    .about-text {
+      flex: 1.0;
+    }
+
     .about-text h1 {
       font-size: 3rem !important;
       color: var(--dark-green);
       margin-bottom: 25px !important;
       text-align: left !important;
     }
+
     .about-text p {
       font-size: 1.2rem;
       line-height: 1.7;
       color: #333;
       margin-bottom: 15px;
     }
-    .about-text .sub-desc { font-size: 1rem; color: #666; }
 
-    .about-image { 
-      flex: 1.2; 
+    .about-text .sub-desc {
+      font-size: 1rem;
+      color: #666;
+    }
+
+    .about-image {
+      flex: 1.2;
       width: 100%;
       max-width: 800px;
       position: relative;
     }
+
     .about-image img {
       width: 100%;
       border-radius: 20px;
-      box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
       object-fit: cover;
     }
 
     /* 슬라이더 높이를 PC에서 명시적으로 지정 */
     .about-slider {
       width: 100%;
-      height: 450px; /* PC 슬라이더 높이 */
+      height: 450px;
+      /* PC 슬라이더 높이 */
       border-radius: 20px;
       overflow: hidden;
-      box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
     }
 
     .about-slider img {
       width: 100%;
       height: 100%;
-      object-fit: cover; /* 영역에 맞게 꽉 채움 */
+      object-fit: cover;
+      /* 영역에 맞게 꽉 채움 */
       display: block;
     }
 
@@ -266,33 +330,46 @@
       background: var(--primary-green);
     }
 
-      /* =========================================
+    /* =========================================
        [Mobile] 모바일 전용 레이아웃 최적화 
        ========================================= */
     @media (max-width: 900px) {
+
       /* 1. Home 모바일 패딩 축소 */
       .home .max-w-container {
-        padding-top: 30vh; /* 모바일에서는 조금 덜 밀어내기 */
+        padding-top: 30vh;
+        /* 모바일에서는 조금 덜 밀어내기 */
         padding-left: 0;
       }
-      .home h1 { font-size: 2.5rem; }
-      .home p { font-size: 1.1rem; }
+
+      .home h1 {
+        font-size: 2.5rem;
+      }
+
+      .home p {
+        font-size: 1.1rem;
+      }
 
       /* 2. About 모바일 레이아웃 */
       .about {
-        padding-top: 100px !important; /* 모바일 헤더 대응 */
+        padding-top: 100px !important;
+        /* 모바일 헤더 대응 */
         justify-content: flex-start !important;
       }
+
       .about-content {
-        flex-direction: column; /* 위아래로 배치 */
+        flex-direction: column;
+        /* 위아래로 배치 */
         text-align: center;
         gap: 20px;
       }
+
       .about-text h1 {
         font-size: 2.2rem !important;
         margin-bottom: 15px !important;
         text-align: center !important;
       }
+
       .about-text p {
         font-size: 1rem;
         padding: 0 10px;
@@ -302,30 +379,36 @@
       .about-image {
         width: 100%;
         max-width: 100%;
-        order: -1; /* 사진을 글보다 위로 올리고 싶다면 사용 (선택) */
+        order: -1;
+        /* 사진을 글보다 위로 올리고 싶다면 사용 (선택) */
       }
+
       .about-slider {
-        height: 280px; /* 모바일에서 사진이 확실히 보이게 높이 지정 */
+        height: 280px;
+        /* 모바일에서 사진이 확실히 보이게 높이 지정 */
         margin-bottom: 20px;
       }
     }
-    
+
     /* =======================
        Team Section (Slider)
        ======================= */
-    .team { background-color: #f9f9f9; width: 100%; }
-    
+    .team {
+      background-color: #f9f9f9;
+      width: 100%;
+    }
+
     .team h2 {
-        font-size: 1.8rem;
-        margin-bottom: 20px;
-        color: var(--dark-green);
-        margin-top: 10px;
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      color: var(--dark-green);
+      margin-top: 10px;
     }
 
     .slider-wrapper {
       position: relative;
       width: 100%;
-      padding: 0 50px; 
+      padding: 0 50px;
       margin-bottom: 30px;
     }
 
@@ -342,46 +425,79 @@
       text-align: center;
       box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
-      width: 200px; 
-      height: 260px; 
+      width: 200px;
+      height: 260px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
     }
-    .team-member:hover { transform: translateY(-6px); box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15); }
-    
+
+    .team-member:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+    }
+
     .team-member img {
-      width: 90px; height: 90px;
+      width: 90px;
+      height: 90px;
       border-radius: 50%;
       object-fit: cover;
       border: 3px solid rgba(23, 188, 97, 0.3);
       margin-bottom: 10px;
     }
-    .team-member h3 { font-size: 1.1em; font-weight: 600; margin: 5px 0; }
-    .team-member p { color: #666; font-size: 0.9em; margin-bottom: 10px; }
 
-    .social-icons { display: flex; justify-content: center; gap: 10px; }
-    .social-icons a { color: #999; font-size: 1.1em; }
-    .social-icons a:hover { color: var(--primary-green); transform: scale(1.2); }
+    .team-member h3 {
+      font-size: 1.1em;
+      font-weight: 600;
+      margin: 5px 0;
+    }
+
+    .team-member p {
+      color: #666;
+      font-size: 0.9em;
+      margin-bottom: 10px;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .social-icons a {
+      color: #999;
+      font-size: 1.1em;
+    }
+
+    .social-icons a:hover {
+      color: var(--primary-green);
+      transform: scale(1.2);
+    }
 
     .swiper-button-prev,
     .swiper-button-next {
-      width: 40px; height: 40px;
+      width: 40px;
+      height: 40px;
       color: var(--primary-green);
-      background: rgba(255,255,255,0.8);
+      background: rgba(255, 255, 255, 0.8);
       border-radius: 50%;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
       z-index: 10;
     }
-    .swiper-button-prev:after, 
-    .swiper-button-next:after { font-size: 1.2rem; font-weight: bold; }
-    
+
+    .swiper-button-prev:after,
+    .swiper-button-next:after {
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
     @media (min-width: 901px) {
       .swiper.team-slider {
-        height: auto; 
+        height: auto;
         min-height: 320px;
       }
+
       .swiper-slide {
         display: flex;
         justify-content: center;
@@ -391,24 +507,32 @@
     }
 
     @media (max-width: 900px) {
-      .slider-wrapper { padding: 0; }
-      .swiper-button-next, .swiper-button-prev { display: none; }
-      
+      .slider-wrapper {
+        padding: 0;
+      }
+
+      .swiper-button-next,
+      .swiper-button-prev {
+        display: none;
+      }
+
       .swiper.team-slider {
-        height: auto; 
+        height: auto;
         padding-bottom: 40px;
       }
+
       .swiper-slide {
         height: auto !important;
         width: auto !important;
         display: flex;
         justify-content: center;
       }
+
       .team-member {
         width: 260px;
-        height: auto; 
-        min-height: 240px; 
-        padding: 30px 20px; 
+        height: auto;
+        min-height: 240px;
+        padding: 30px 20px;
       }
     }
 
@@ -418,8 +542,8 @@
     .section[data-anchor="research"] {
       display: flex !important;
       flex-direction: column !important;
-      justify-content: flex-start !important; 
-      padding-top: 140px !important; 
+      justify-content: flex-start !important;
+      padding-top: 140px !important;
       padding-bottom: 60px !important;
     }
 
@@ -431,7 +555,8 @@
 
     .section[data-anchor="research"] .max-w-container {
       width: 100% !important;
-      max-width: 1400px !important; /* 너비 */
+      max-width: 1400px !important;
+      /* 너비 */
       margin: 0 auto;
     }
 
@@ -446,7 +571,10 @@
       width: 100%;
       display: block;
     }
-    .year-header:first-of-type { margin-top: 0; }
+
+    .year-header:first-of-type {
+      margin-top: 0;
+    }
 
     .pub-item {
       width: 100%;
@@ -461,52 +589,82 @@
       flex-direction: column;
       text-align: left;
     }
+
     .pub-item:hover {
       border-left-color: var(--primary-green);
       transform: translateY(-3px);
-      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     }
+
     .pub-venue {
       font-size: 0.9rem;
       color: var(--primary-green);
       font-weight: 700;
       margin-bottom: 5px;
     }
+
     .pub-title {
       font-size: 1.4rem;
       font-weight: 700;
       color: #222;
       margin-bottom: 8px;
     }
-    .pub-authors { font-size: 1rem; color: #555; margin-bottom: 10px; }
-    
+
+    .pub-authors {
+      font-size: 1rem;
+      color: #555;
+      margin-bottom: 10px;
+    }
+
     .pub-links a {
       font-size: 0.9rem;
       color: var(--primary-green);
       font-weight: 600;
       margin-right: 15px;
     }
-    .pub-links a:hover { text-decoration: underline; }
-    
+
+    .pub-links a:hover {
+      text-decoration: underline;
+    }
+
     @media (min-width: 901px) {
       .section[data-anchor="research"] .max-w-container {
-        width: 1200px !important; 
-        max-width: 95vw !important; 
+        width: 1200px !important;
+        max-width: 95vw !important;
       }
+
       .pub-item {
         width: 100% !important;
       }
     }
+
     /* =======================
        Open Source & Media
        ======================= */
-    .opensource { background-color: #fff; }
-    .opensource p.link-text { font-size: 1.3rem; margin-top: 30px; }
-    .opensource a { color: var(--primary-green); font-weight: 600; text-decoration: underline; }
+    .opensource {
+      background-color: #fff;
+    }
+
+    .opensource p.link-text {
+      font-size: 1.3rem;
+      margin-top: 30px;
+    }
+
+    .opensource a {
+      color: var(--primary-green);
+      font-weight: 600;
+      text-decoration: underline;
+    }
 
     /* Media Section */
-    .media { background-color: #fff; }
-    .media a { color: var(--primary-green); font-weight: 600; }
+    .media {
+      background-color: #fff;
+    }
+
+    .media a {
+      color: var(--primary-green);
+      font-weight: 600;
+    }
 
     /* .video-container {
       display: flex;
@@ -586,6 +744,7 @@
       padding-right: 0;
       padding-top: 80px;
     }
+
     .media-grid {
       width: 100%;
       display: grid;
@@ -596,20 +755,25 @@
 
     /* [수정 포인트] 사진(img)과 비디오(video) 공용 스타일 */
     .media-item {
-      width: 100%; /* 3개가 한 줄에 나오도록 설정 */
-      min-width: 0; 
-      max-width: none; 
-      max-height: 55vh; 
-      aspect-ratio: 9 / 16; /* 세로형 비율 유지 */
-      object-fit: cover;    /* 비율이 달라도 영역을 꽉 채움 */
+      width: 100%;
+      /* 3개가 한 줄에 나오도록 설정 */
+      min-width: 0;
+      max-width: none;
+      max-height: 55vh;
+      aspect-ratio: 9 / 16;
+      /* 세로형 비율 유지 */
+      object-fit: cover;
+      /* 비율이 달라도 영역을 꽉 채움 */
       border-radius: 16px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
       background: #000;
       transition: transform 0.3s;
-      display: block; 
+      display: block;
     }
 
-    .media-item:hover { transform: scale(1.02); }
+    .media-item:hover {
+      transform: scale(1.02);
+    }
 
     @media (max-width: 900px) {
       .section.media .max-w-container {
@@ -626,10 +790,13 @@
         min-width: 0;
       }
     }
+
     @media (max-width: 480px) {
       .media-grid {
-        display: flex;           /* grid 끔 */
-        flex-direction: column;  /* 1개씩 */
+        display: flex;
+        /* grid 끔 */
+        flex-direction: column;
+        /* 1개씩 */
         gap: 20px;
       }
 
@@ -646,14 +813,14 @@
     .contact {
       width: 100%;
       min-height: 100vh;
-      padding: 100px 20px 20px; 
+      padding: 100px 20px 20px;
       box-sizing: border-box;
       display: flex;
       justify-content: center;
       align-items: center;
       background: linear-gradient(to bottom, #ffffff 0%, #ffffff 60%, #dff8ea 100%);
     }
-    
+
     .contact-container {
       display: flex;
       flex-direction: column;
@@ -664,7 +831,7 @@
       height: 100%;
       min-height: 50vh;
     }
-    
+
     .contact-top {
       display: flex;
       flex-direction: column;
@@ -673,14 +840,18 @@
       margin-bottom: 40px;
       width: 100%;
     }
-    .contact-top h1 { margin-bottom: 20px; }
-    
+
+    .contact-top h1 {
+      margin-bottom: 20px;
+    }
+
     .footer-info {
       font-size: 1.1rem;
       line-height: 1.8;
       text-align: center;
-      margin-top: 50px; 
+      margin-top: 50px;
     }
+
     .footer-info a {
       font-weight: 600;
       color: var(--primary-green);
@@ -690,14 +861,14 @@
     .lab-logos {
       width: 100%;
       display: flex;
-      justify-content: center; 
-      align-items: center; 
-      gap: 50px; 
+      justify-content: center;
+      align-items: center;
+      gap: 50px;
       flex-wrap: wrap;
-      margin-top: auto; 
+      margin-top: auto;
       padding-top: 20px;
     }
-    
+
     .lab-link {
       display: flex;
       flex-direction: column;
@@ -706,45 +877,88 @@
       color: #333;
       transition: transform 0.3s;
     }
-    .lab-link:hover { transform: translateY(-5px); color: #0078ff; }
-    
+
+    .lab-link:hover {
+      transform: translateY(-5px);
+      color: #0078ff;
+    }
+
     .lab-link img {
-      height: 100px; 
+      height: 100px;
       width: auto;
-      object-fit: contain; 
+      object-fit: contain;
       margin-bottom: 12px;
       opacity: 0.9;
       transition: 0.3s;
     }
-    .lab-link img:hover { opacity: 1; transform: scale(1.05); }
-    .lab-link span { font-size: 1.1rem; font-weight: 600; color: #555; }
-    
-    .lab-link img.rcv-logo { height: 100px; } 
-    .lab-link img.sparo-logo { height: 80px; } 
-    .lab-link img.artemis-logo { height: 120px; } 
-    .lab-link img.rils-logo { height: 160px; } 
+
+    .lab-link img:hover {
+      opacity: 1;
+      transform: scale(1.05);
+    }
+
+    .lab-link span {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #555;
+    }
+
+    .lab-link img.rcv-logo {
+      height: 100px;
+    }
+
+    .lab-link img.sparo-logo {
+      height: 80px;
+    }
+
+    .lab-link img.artemis-logo {
+      height: 120px;
+    }
+
+    .lab-link img.rils-logo {
+      height: 160px;
+    }
 
     /* =========================================
        [Mobile] Mobile Layout Fixes 
        ========================================= */
     @media (max-width: 900px) {
-      .slider-wrapper { padding: 0; }
-      .swiper-button-next, .swiper-button-prev { display: none; }
+      .slider-wrapper {
+        padding: 0;
+      }
 
-      .section { padding: 80px 20px; }
-      .section.opensource { background-color: #fff !important; min-height: auto !important; padding-bottom: 60px; }
-      
+      .swiper-button-next,
+      .swiper-button-prev {
+        display: none;
+      }
+
+      .section {
+        padding: 80px 20px;
+      }
+
+      .section.opensource {
+        background-color: #fff !important;
+        min-height: auto !important;
+        padding-bottom: 60px;
+      }
+
       .section.team {
         display: flex !important;
         flex-direction: column !important;
         justify-content: flex-start !important;
-        padding-top: 80px !important; 
+        padding-top: 80px !important;
         padding-bottom: 60px !important;
         height: auto !important;
         min-height: 100vh;
       }
-      .section p.desc { width: 100% !important; white-space: normal !important; margin-bottom: 30px; padding: 0 10px; }
-      
+
+      .section p.desc {
+        width: 100% !important;
+        white-space: normal !important;
+        margin-bottom: 30px;
+        padding: 0 10px;
+      }
+
       .section.team .fp-tableCell {
         display: flex !important;
         flex-direction: column !important;
@@ -756,91 +970,129 @@
       .swiper.team-slider {
         width: 100%;
         padding-bottom: 40px;
-        padding-left: 20px;  /* 왼쪽 시작 여백 */
-        padding-right: 20px; /* 오른쪽 끝 여백 */
-        overflow: visible !important; /* 그림자 잘림 방지 */
+        padding-left: 20px;
+        /* 왼쪽 시작 여백 */
+        padding-right: 20px;
+        /* 오른쪽 끝 여백 */
+        overflow: visible !important;
+        /* 그림자 잘림 방지 */
       }
-      
+
       /* [추가] 슬라이더 내부 강제 왼쪽 정렬 (오른쪽 쏠림 방지) 
       .swiper-wrapper {
         justify-content: flex-start !important;
       }*/
-      
+
       /* 2. 카드 크기 고정 (핵심: 너비를 줄이고 고정해야 슬라이드 됨) */
       .team-member {
-        width: 160px;       /* PC 200px -> 160px로 고정 */
-        height: auto; 
+        width: 160px;
+        /* PC 200px -> 160px로 고정 */
+        height: auto;
         min-height: 200px;
-        margin: 0;          /* 불필요한 마진 제거 */
+        margin: 0;
+        /* 불필요한 마진 제거 */
       }
-      
+
       .team-member img {
-        width: 65px; height: 65px; /* 이미지 축소 */
+        width: 65px;
+        height: 65px;
+        /* 이미지 축소 */
         margin-bottom: 8px;
       }
-      .team-member h3 { font-size: 0.95em; margin: 4px 0; }
-      .team-member p { font-size: 0.8em; margin-bottom: 5px; }
+
+      .team-member h3 {
+        font-size: 0.95em;
+        margin: 4px 0;
+      }
+
+      .team-member p {
+        font-size: 0.8em;
+        margin-bottom: 5px;
+      }
 
       /* 3. 슬라이드 래퍼 설정 (내용물 크기에 맞춤) */
       .swiper-slide {
-        width: auto !important; /* 화면 꽉 차지 않고 카드 크기만큼만 차지 */
+        width: auto !important;
+        /* 화면 꽉 차지 않고 카드 크기만큼만 차지 */
         display: flex;
         justify-content: center;
       }
-      
-      .contact { 
-        padding-top: 60px !important; padding-bottom: 40px !important; 
-        display: flex !important; align-items: center; justify-content: center;
+
+      .contact {
+        padding-top: 60px !important;
+        padding-bottom: 40px !important;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
       }
-      .contact-container { height: auto !important; justify-content: center !important; gap: 40px; }
-      .footer-info { margin-top: 20px !important; margin-bottom: 20px !important; }
-      
+
+      .contact-container {
+        height: auto !important;
+        justify-content: center !important;
+        gap: 40px;
+      }
+
+      .footer-info {
+        margin-top: 20px !important;
+        margin-bottom: 20px !important;
+      }
+
       /* 모바일 로고 그리드 */
       .lab-logos {
-        display: grid; 
-        grid-template-columns: repeat(2, 1fr); 
-        gap: 40px 15px; 
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px 15px;
         width: 100%;
-        max-width: 400px; 
+        max-width: 400px;
         margin-top: 30px !important;
         padding-bottom: 20px;
       }
-      
+
       .lab-link {
         width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: flex-end; 
+        justify-content: flex-end;
       }
 
       .lab-link img {
-        height: 70px; 
-        width: 100%; 
-        object-fit: contain; 
-        object-position: center bottom; 
+        height: 70px;
+        width: 100%;
+        object-fit: contain;
+        object-position: center bottom;
         margin-bottom: 10px;
       }
-      
-      .lab-link span { font-size: 1rem; }
+
+      .lab-link span {
+        font-size: 1rem;
+      }
 
       /* 모바일 로고 개별 미세 조정 */
-      .lab-link img.sparo-logo { padding: 5px; }
-      .lab-link img.rcv-logo { 
-         height: 70px; 
-         transform: scale(1.3); 
-         transform-origin: center bottom;
-         margin-bottom: 15px; 
+      .lab-link img.sparo-logo {
+        padding: 5px;
       }
+
+      .lab-link img.rcv-logo {
+        height: 70px;
+        transform: scale(1.3);
+        transform-origin: center bottom;
+        margin-bottom: 15px;
+      }
+
       .lab-link img.artemis-logo {
-         height: 55px !important; 
-         border-radius: 6px;
-         margin-bottom: 15px;
+        height: 55px !important;
+        border-radius: 6px;
+        margin-bottom: 15px;
       }
-      .lab-link img.rils-logo { transform: scale(1.1); }
+
+      .lab-link img.rils-logo {
+        transform: scale(1.1);
+      }
     }
   </style>
 </head>
+
 <body>
 
   <!-- 상위 헤더 구현 파트 -->
@@ -855,7 +1107,7 @@
       <a href="#contact">Contact</a>
       <!-- 실제 youtube 링크 필요 -->
       <a href="https://www.youtube.com/@Inha-United_Soccer" target="_blank"><i class="fab fa-youtube"></i></a>
-      <a href="https://github.com/Inha-united-soccer" target="_blank"><i class="fab fa-github"></i></a> 
+      <a href="https://github.com/Inha-united-soccer" target="_blank"><i class="fab fa-github"></i></a>
     </nav>
   </header>
 
@@ -875,10 +1127,18 @@
       <div class="max-w-container about-content">
         <div class="about-text">
           <h1>About Inha-United</h1>
-          <p>Inha-United@Soccer is a collaborative team formed by four major robotics and artificial intelligence laboratories at Inha University, united by a shared goal of advancing autonomous humanoid soccer robotics.</p>
-          <p>Our team brings together expertise in camera-based visual perception, localization, locomotion and motion control, and high-level decision-making and strategy to develop intelligent soccer robots capable of operating reliably in real-world environments. By tightly integrating these core research areas, we aim to build robotic systems that are robust, adaptive, and responsive in dynamic and unpredictable settings.</p>
-          <p>Inha-United@Soccer focuses on the development of a fully integrated robotic system, in which perception, decision-making, and control are closely coupled. With an emphasis on camera-based visual perception, we design object detection and situational awareness algorithms that operate robustly under real match conditions, alongside strategic decision-making frameworks and control architectures that enable coordinated team behaviors.</p>
-          <p>Ultimately, Inha-United@Soccer aims to push the boundaries of autonomous robotic systems and contribute to the advancement of intelligent robotics.</p>
+          <p>Inha-United@Soccer is a collaborative team formed by four major robotics and artificial intelligence
+            laboratories at Inha University, united by a shared goal of advancing autonomous humanoid soccer robotics.
+          </p>
+          <p>We have also participated in multiple international competitions listed in Table 1 as opportunities to
+            validate our technical skills and acquire practical insights, and have received the awards indicated.</p>
+          <p>Inha-United@Soccer focuses on the development of a fully integrated robotic system, in which perception,
+            decision-making, and control are closely coupled. With an emphasis on camera-based visual perception, we
+            design object detection and situational awareness algorithms that operate robustly under real match
+            conditions, alongside strategic decision-making frameworks and control architectures that enable coordinated
+            team behaviors.</p>
+          <p>Ultimately, Inha-United@Soccer aims to push the boundaries of autonomous robotic systems and contribute to
+            the advancement of intelligent robotics.</p>
         </div>
         <!-- swiper로 변경해서 이미지 넘어가게끔 구현 -->
         <div class="about-image">
@@ -899,90 +1159,103 @@
 
     <section class="section team" data-anchor="team">
       <div class="max-w-container">
-        
+
         <h2>Principal Investigator</h2>
         <div class="slider-wrapper">
           <div class="swiper-button-prev"></div>
           <div class="swiper-button-next"></div>
-          
+
           <div class="swiper team-slider advisor-slider">
             <div class="swiper-wrapper">
 
               <div class="swiper-slide">
                 <div class="team-member">
-                  <img src="https://scholar.googleusercontent.com/citations?view_op=medium_photo&user=uN8XRMQAAAAJ&citpid=3" alt="Inwook Shim" onerror="this.src='https://via.placeholder.com/90?text=IS'" />
+                  <img
+                    src="https://scholar.googleusercontent.com/citations?view_op=medium_photo&user=uN8XRMQAAAAJ&citpid=3"
+                    alt="Inwook Shim" onerror="this.src='https://via.placeholder.com/90?text=IS'" />
                   <h3>Inwook Shim</h3>
                   <p>Professor</p>
                   <div class="social-icons">
-                      <a href="https://github.com/inugi00" target="_blank"><i class="fab fa-github"></i></a>
-                      <!--<a href="https://kr.linkedin.com/in/inwook-shim-59a597114" target="_blank"><i class="fab fa-linkedin"></i></a>-->
-                      <a href="mailto:iwshim@inha.ac.kr"><i class="fas fa-envelope"></i></a>
-                      <a href="https://scholar.google.com/citations?user=uN8XRMQAAAAJ&hl=en" target="_blank"><i class="fas fa-graduation-cap"></i></a>
-                      <a href="https://rcv-inha.notion.site/webhome" target="_blank"><i class="fas fa-home"></i></a>
+                    <a href="https://github.com/inugi00" target="_blank"><i class="fab fa-github"></i></a>
+                    <!--<a href="https://kr.linkedin.com/in/inwook-shim-59a597114" target="_blank"><i class="fab fa-linkedin"></i></a>-->
+                    <a href="mailto:iwshim@inha.ac.kr"><i class="fas fa-envelope"></i></a>
+                    <a href="https://scholar.google.com/citations?user=uN8XRMQAAAAJ&hl=en" target="_blank"><i
+                        class="fas fa-graduation-cap"></i></a>
+                    <a href="https://rcv-inha.notion.site/webhome" target="_blank"><i class="fas fa-home"></i></a>
                   </div>
                 </div>
               </div>
 
               <div class="swiper-slide">
                 <div class="team-member">
-                  <img src="https://scholar.googleusercontent.com/citations?view_op=medium_photo&user=W5MOKWIAAAAJ&citpid=2" alt="Younggun Cho" onerror="this.src='https://via.placeholder.com/90?text=YC'" />
+                  <img
+                    src="https://scholar.googleusercontent.com/citations?view_op=medium_photo&user=W5MOKWIAAAAJ&citpid=2"
+                    alt="Younggun Cho" onerror="this.src='https://via.placeholder.com/90?text=YC'" />
                   <h3>Younggun Cho</h3>
                   <p>Professor</p>
                   <div class="social-icons">
-                      <a href="https://github.com/sparo-lab" target="_blank"><i class="fab fa-github"></i></a>
-                      <!--<a href="https://kr.linkedin.com/in/younggun-cho-392799116" target="_blank"><i class="fab fa-linkedin"></i></a>-->
-                      <a href="mailto:yg.cho@inha.ac.kr"><i class="fas fa-envelope"></i></a>
-                      <a href="https://scholar.google.com/citations?user=W5MOKWIAAAAJ&hl=en" target="_blank"><i class="fas fa-graduation-cap"></i></a>
-                      <a href="https://sparolab.github.io" target="_blank"><i class="fas fa-home"></i></a>
+                    <a href="https://github.com/sparo-lab" target="_blank"><i class="fab fa-github"></i></a>
+                    <!--<a href="https://kr.linkedin.com/in/younggun-cho-392799116" target="_blank"><i class="fab fa-linkedin"></i></a>-->
+                    <a href="mailto:yg.cho@inha.ac.kr"><i class="fas fa-envelope"></i></a>
+                    <a href="https://scholar.google.com/citations?user=W5MOKWIAAAAJ&hl=en" target="_blank"><i
+                        class="fas fa-graduation-cap"></i></a>
+                    <a href="https://sparolab.github.io" target="_blank"><i class="fas fa-home"></i></a>
                   </div>
                 </div>
               </div>
 
               <div class="swiper-slide">
                 <div class="team-member">
-                  <img src="https://scholar.googleusercontent.com/citations?view_op=medium_photo&user=1lbPybMAAAAJ&citpid=3" alt="Junwoo Jang" onerror="this.src='https://via.placeholder.com/90?text=JJ'" />
+                  <img
+                    src="https://scholar.googleusercontent.com/citations?view_op=medium_photo&user=1lbPybMAAAAJ&citpid=3"
+                    alt="Junwoo Jang" onerror="this.src='https://via.placeholder.com/90?text=JJ'" />
                   <h3>Junwoo Jang</h3>
                   <p>Professor</p>
                   <div class="social-icons">
-                      <a href="https://github.com/Artemis-inha" target="_blank"><i class="fab fa-github"></i></a>
-                      <a href="mailto:junwoo@inha.ac.kr"><i class="fas fa-envelope"></i></a>
-                      <a href="https://scholar.google.com/citations?user=1lbPybMAAAAJ&hl=en" target="_blank"><i class="fas fa-graduation-cap"></i></a>
-                      <a href="https://artemis-inha.github.io/" target="_blank"><i class="fas fa-home"></i></a>
+                    <a href="https://github.com/Artemis-inha" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="mailto:junwoo@inha.ac.kr"><i class="fas fa-envelope"></i></a>
+                    <a href="https://scholar.google.com/citations?user=1lbPybMAAAAJ&hl=en" target="_blank"><i
+                        class="fas fa-graduation-cap"></i></a>
+                    <a href="https://artemis-inha.github.io/" target="_blank"><i class="fas fa-home"></i></a>
                   </div>
                 </div>
               </div>
 
               <div class="swiper-slide">
                 <div class="team-member">
-                  <img src="https://media.licdn.com/dms/image/v2/D5603AQGrAIBlHg5KCQ/profile-displayphoto-shrink_200_200/B56ZV7n8KJGUAY-/0/1741535822803?e=2147483647&v=beta&t=K1kG55kvd55i8zy0tO0tqMIQgItrRwUywE8A7AIqLvI" alt="Woojin Ahn" onerror="this.src='https://via.placeholder.com/90?text=WA'" />
+                  <img
+                    src="https://media.licdn.com/dms/image/v2/D5603AQGrAIBlHg5KCQ/profile-displayphoto-shrink_200_200/B56ZV7n8KJGUAY-/0/1741535822803?e=2147483647&v=beta&t=K1kG55kvd55i8zy0tO0tqMIQgItrRwUywE8A7AIqLvI"
+                    alt="Woojin Ahn" onerror="this.src='https://via.placeholder.com/90?text=WA'" />
                   <h3>Woojin Ahn</h3>
                   <p>Professor</p>
                   <div class="social-icons">
-                      <a href="https://github.com/wjahn" target="_blank"><i class="fab fa-github"></i></a>
-                      <!--<a href="https://www.linkedin.com/in/woojin-ahn-4a7a431b9" target="_blank"><i class="fab fa-linkedin"></i></a>-->
-                      <a href="mailto:wjahn@inha.ac.kr"><i class="fas fa-envelope"></i></a>
-                      <a href="https://scholar.google.com/citations?user=4Q-TY8YAAAAJ&hl=en" target="_blank"><i class="fas fa-graduation-cap"></i></a>
-                      <a href="https://wjahn.github.io/rils/" target="_blank"><i class="fas fa-home"></i></a>
+                    <a href="https://github.com/wjahn" target="_blank"><i class="fab fa-github"></i></a>
+                    <!--<a href="https://www.linkedin.com/in/woojin-ahn-4a7a431b9" target="_blank"><i class="fab fa-linkedin"></i></a>-->
+                    <a href="mailto:wjahn@inha.ac.kr"><i class="fas fa-envelope"></i></a>
+                    <a href="https://scholar.google.com/citations?user=4Q-TY8YAAAAJ&hl=en" target="_blank"><i
+                        class="fas fa-graduation-cap"></i></a>
+                    <a href="https://wjahn.github.io/rils/" target="_blank"><i class="fas fa-home"></i></a>
                   </div>
                 </div>
               </div>
 
-            </div> 
+            </div>
             <div class="swiper-pagination"></div>
-          </div> 
-        </div> 
+          </div>
+        </div>
 
         <h2>Team Member</h2>
         <div class="slider-wrapper">
           <div class="swiper-button-prev"></div>
           <div class="swiper-button-next"></div>
-          
+
           <div class="swiper team-slider member-slider">
             <div class="swiper-wrapper">
-              
+
               <div class="swiper-slide">
                 <div class="team-member">
-                  <img src="img/sjw.jpg" alt="Jaeyuk Seung" onerror="this.src='https://via.placeholder.com/90?text=ML'" />
+                  <img src="img/sjw.jpg" alt="Jaeyuk Seung"
+                    onerror="this.src='https://via.placeholder.com/90?text=ML'" />
                   <h3>Jaeyuk Seung</h3>
                   <p>Team Leader / Undergraduate</p>
                   <div class="social-icons">
@@ -991,10 +1264,11 @@
                   </div>
                 </div>
               </div>
-              
+
               <div class="swiper-slide">
                 <div class="team-member">
-                  <img src="img/keb.jpg" alt="Eunbyeol Ko" onerror="this.src='https://via.placeholder.com/90?text=JK'" />
+                  <img src="img/keb.jpg" alt="Eunbyeol Ko"
+                    onerror="this.src='https://via.placeholder.com/90?text=JK'" />
                   <h3>Eunbyeol Ko</h3>
                   <p>Undergraduate</p>
                   <div class="social-icons">
@@ -1005,7 +1279,8 @@
               </div>
               <div class="swiper-slide">
                 <div class="team-member">
-                  <img src="img/keg.jpg" alt="Eungkyu Kim" onerror="this.src='https://via.placeholder.com/90?text=SL'" />
+                  <img src="img/keg.jpg" alt="Eungkyu Kim"
+                    onerror="this.src='https://via.placeholder.com/90?text=SL'" />
                   <h3>Eungkyu Kim</h3>
                   <p>Undergraduate</p>
                   <div class="social-icons">
@@ -1027,7 +1302,8 @@
               </div>
               <div class="swiper-slide">
                 <div class="team-member">
-                  <img src="img/ssh.jpg" alt="Suhyeon Shin" onerror="this.src='https://via.placeholder.com/90?text=GP'" />
+                  <img src="img/ssh.jpg" alt="Suhyeon Shin"
+                    onerror="this.src='https://via.placeholder.com/90?text=GP'" />
                   <h3>Suhyeon Shin</h3>
                   <p>Undergraduate</p>
                   <div class="social-icons">
@@ -1036,7 +1312,7 @@
                   </div>
                 </div>
               </div>
-              
+
               <!-- 새로 오시는 분 추가 필요-->
               <div class="swiper-slide">
                 <div class="team-member">
@@ -1062,7 +1338,8 @@
       <div class="max-w-container">
         <h3 class="year-header">2025</h3>
         <div class="pub-item">
-          <span class="pub-title">MSG-Loc: Multi-Label Likelihood-based Semantic Graph Matching for Object-Level Global Localization (Accepted)</span>
+          <span class="pub-title">MSG-Loc: Multi-Label Likelihood-based Semantic Graph Matching for Object-Level Global
+            Localization (Accepted)</span>
           <span class="pub-venue">IEEE Robotics and Automation Letters (RA-L)</span>
           <div class="pub-authors">Gihyeon Lee, Jungwoo Lee, Juwon Kim, Young-Sik Shin, and Younggun Cho</div>
           <div class="pub-links">
@@ -1072,29 +1349,34 @@
 
         <div class="pub-item">
           <!--25-11-12-->
-          <span class="pub-title">Freeze-Frame with StaticNeRF Uncertainty-Guided NeRF Map Reconstruction in Dynamic Scenes</span>
+          <span class="pub-title">Freeze-Frame with StaticNeRF Uncertainty-Guided NeRF Map Reconstruction in Dynamic
+            Scenes</span>
           <span class="pub-venue">IEEE Robotics and Automation Letters (RA-L)</span>
           <div class="pub-authors">Juhui Lee, Geonmo Yang, Seungjun Ma, and Younggun Cho</div>
           <div class="pub-links">
             <a href="https://sparolab.github.io/research/staticnerf/" target="_blank">[LINK]</a>
           </div>
         </div>
-        
+
         <div class="pub-item">
           <!--25-12-XX-->
-          <span class="pub-title">REPLAY: Robot Embodiment via Intent-aware Policy Imitation by Replicating Human Demonstrations from Video (Accepted)</span>
+          <span class="pub-title">REPLAY: Robot Embodiment via Intent-aware Policy Imitation by Replicating Human
+            Demonstrations from Video (Accepted)</span>
           <span class="pub-venue">International Journal of Control, Automation and Systems (IJCAS)</span>
-          <div class="pub-authors">Sung-Gil Park, Han-Byeol Kim, Yong-Geon Kim, Seuk-Woo Ryu, Byeong-Gil Yoo, Sungeun Chung, Yong-Jun Lee, Jeong-Seop Park, Woo-Jin Ahn*, Myo-Taeg Lim*</div>
+          <div class="pub-authors">Sung-Gil Park, Han-Byeol Kim, Yong-Geon Kim, Seuk-Woo Ryu, Byeong-Gil Yoo, Sungeun
+            Chung, Yong-Jun Lee, Jeong-Seop Park, Woo-Jin Ahn*, Myo-Taeg Lim*</div>
           <div class="pub-links">
             <!--<a href="https://#" target="_blank">[LINK]</a>-->
           </div>
         </div>
-        
+
         <div class="pub-item">
           <!--25-11-27-->
-          <span class="pub-title">Practical Mixed Palletizing Manipulator System: Incorporating Practical Reinforcement Learning and Configuration-Space Motion Planning</span>
+          <span class="pub-title">Practical Mixed Palletizing Manipulator System: Incorporating Practical Reinforcement
+            Learning and Configuration-Space Motion Planning</span>
           <span class="pub-venue">IEEE Transactions on Automation Science and Engineering (T-ASE)</span>
-          <div class="pub-authors">Woo-Jin Ahn, Kyuwon Choi, Seong-Woo Kang, Cheol-Kyun Rho, Dong-Sung Pae, Myo-Taeg Lim</div>
+          <div class="pub-authors">Woo-Jin Ahn, Kyuwon Choi, Seong-Woo Kang, Cheol-Kyun Rho, Dong-Sung Pae, Myo-Taeg Lim
+          </div>
           <div class="pub-links">
             <a href="https://ieeexplore.ieee.org/document/11270909" target="_blank">[LINK]</a>
           </div>
@@ -1102,37 +1384,43 @@
 
         <div class="pub-item">
           <!--25-10-17-->
-          <span class="pub-title">OffSim: Offline Simulator for Model-based Offline Inverse Reinforcement Learning</span>
+          <span class="pub-title">OffSim: Offline Simulator for Model-based Offline Inverse Reinforcement
+            Learning</span>
           <span class="pub-venue">arXiv</span>
           <div class="pub-authors">Woo-Jin Ahn, Sang-Ryul Baek, Yong-Jun Lee, Hyun-Duck Choi, Myo-Taeg Lim</div>
           <div class="pub-links">
             <a href="https://arxiv.org/abs/2510.15495" target="_blank">[LINK]</a>
           </div>
         </div>
-    
+
         <div class="pub-item">
           <!--25-07-28-->
-          <span class="pub-title">Uni-Mapper: Unified Mapping Framework for Multi-modal LiDARs in Complex and Dynamic Environments</span>
+          <span class="pub-title">Uni-Mapper: Unified Mapping Framework for Multi-modal LiDARs in Complex and Dynamic
+            Environments</span>
           <span class="pub-venue">IEEE Transactions on Intelligent Vehicles (T-IV)</span>
-          <div class="pub-authors">Gilhwan Kang, Hogyun Kim, Byunghee Choi, Seokhwan Jeong, Young-Sik Shin, Younggun Cho</div>
+          <div class="pub-authors">Gilhwan Kang, Hogyun Kim, Byunghee Choi, Seokhwan Jeong, Young-Sik Shin, Younggun Cho
+          </div>
           <div class="pub-links">
             <a href="https://sparolab.github.io/research/uni_mapper/" target="_blank">[LINK]</a>
           </div>
         </div>
-        
+
         <div class="pub-item">
           <!--25-07-24-->
-          <span class="pub-title">Registration beyond Points: General Affine Subspace Alignment via Geodesic Distance on Grassmann Manifold</span>
+          <span class="pub-title">Registration beyond Points: General Affine Subspace Alignment via Geodesic Distance on
+            Grassmann Manifold</span>
           <span class="pub-venue">IEEE/CVF International Conference on Computer Vision (ICCV)</span>
           <div class="pub-authors">Jaeho Shin, Hyeonjae Gil, Junwoo Jang, Maani Ghaffari, Ayoung Kim</div>
           <div class="pub-links">
-            <a href="https://openaccess.thecvf.com/content/ICCV2025/html/Shin_Registration_beyond_Points_General_Affine_Subspace_Alignment_via_Geodesic_Distance_ICCV_2025_paper.html" target="_blank">[LINK]</a>
+            <a href="https://openaccess.thecvf.com/content/ICCV2025/html/Shin_Registration_beyond_Points_General_Affine_Subspace_Alignment_via_Geodesic_Distance_ICCV_2025_paper.html"
+              target="_blank">[LINK]</a>
           </div>
         </div>
-        
+
         <div class="pub-item">
           <!--25-07-08-->
-          <span class="pub-title">Contrastive Learning in NMPC Behavior Cloning for Generalized Trajectory Tracking of Marine Vehicles</span>
+          <span class="pub-title">Contrastive Learning in NMPC Behavior Cloning for Generalized Trajectory Tracking of
+            Marine Vehicles</span>
           <span class="pub-venue">IEEE Journal of Oceanic Engineering</span>
           <div class="pub-authors">Junwoo Jang, Maani Ghaffari</div>
           <div class="pub-links">
@@ -1142,48 +1430,54 @@
 
         <div class="pub-item">
           <!--25-06-17-->
-          <span class="pub-title">SceneAware: Scene-Constrained Pedestrian Trajectory Prediction with LLM-Guided Walkability</span>
+          <span class="pub-title">SceneAware: Scene-Constrained Pedestrian Trajectory Prediction with LLM-Guided
+            Walkability</span>
           <span class="pub-venue">arXiv</span>
           <div class="pub-authors">Juho Bai, Inwook Shim</div>
           <div class="pub-links">
             <a href="https://arxiv.org/abs/2506.14144" target="_blank">[LINK]</a>
           </div>
         </div>
-        
+
         <div class="pub-item">
           <!--25-04-02-->
-          <span class="pub-title">Learning Implicit Social Navigation Behavior using Deep Inverse Reinforcement Learning</span>
+          <span class="pub-title">Learning Implicit Social Navigation Behavior using Deep Inverse Reinforcement
+            Learning</span>
           <span class="pub-venue">IEEE Robotics and Automation Letters (RA-L)</span>
           <div class="pub-authors">Tribhi Kathuria, Ke Liu, Junwoo Jang, X. Jessie Yang, Maani Ghaffari</div>
           <div class="pub-links">
             <a href="https://ieeexplore.ieee.org/abstract/document/10947583" target="_blank">[LINK]</a>
           </div>
         </div>
-        
+
         <div class="pub-item">
           <!--25-02-05-->
-          <span class="pub-title">TARG: Tree of Action-Reward Generation with Large Language Model for Cabinet Opening with Manipulator</span>
+          <span class="pub-title">TARG: Tree of Action-Reward Generation with Large Language Model for Cabinet Opening
+            with Manipulator</span>
           <span class="pub-venue">International Journal of Control, Automation and Systems (IJCAS)</span>
           <div class="pub-authors">Sung-Gil Park, Han-Byeol Kim, Yong-Jun Lee, Woo-Jin Ahn*, Myo-Taeg Lim*</div>
           <div class="pub-links">
             <a href="https://link.springer.com/article/10.1007/s12555-024-0528-6" target="_blank">[LINK]</a>
           </div>
         </div>
-        
+
         <h3 class="year-header">2024</h3>
-          <!--2024-->
+        <!--2024-->
         <div class="pub-item">
           <span class="pub-title">Close imitation of expert retouching for black-and-white photography</span>
-          <span class="pub-venue">Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)</span>
+          <span class="pub-venue">Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition
+            (CVPR)</span>
           <div class="pub-authors">Seunghyun Shin, Jisu Shin, Jihwan Bae, Inwook Shim, Hae-Gon Jeon</div>
           <div class="pub-links">
-            <a href="https://openaccess.thecvf.com/content/CVPR2024/html/Shin_Close_Imitation_of_Expert_Retouching_for_Black-and-White_Photography_CVPR_2024_paper.html" target="_blank">[LINK]</a>
+            <a href="https://openaccess.thecvf.com/content/CVPR2024/html/Shin_Close_Imitation_of_Expert_Retouching_for_Black-and-White_Photography_CVPR_2024_paper.html"
+              target="_blank">[LINK]</a>
           </div>
         </div>
-        
+
         <div class="pub-item">
           <!--24-10-17-->
-          <span class="pub-title">Efficient Data Collection Strategy for Modeling the Dynamics of Floating Robotic Vehicles Using Neural Networks</span>
+          <span class="pub-title">Efficient Data Collection Strategy for Modeling the Dynamics of Floating Robotic
+            Vehicles Using Neural Networks</span>
           <span class="pub-venue">Journal of Intelligent & Robotic Systems</span>
           <div class="pub-authors">Junwoo Jang, Haggi Do, Maani Ghaffari, Jinwhan Kim</div>
           <div class="pub-links">
@@ -1200,10 +1494,11 @@
             <a href="https://sparolab.github.io/research/uni_mapper/" target="_blank">[LINK]</a>
           </div>
         </div>
-        
+
         <div class="pub-item">
           <!--24-05-30-->
-          <span class="pub-title">Salience-guided Ground Factor for Robust Localization of Delivery Robots in Complex Urban Environments</span>
+          <span class="pub-title">Salience-guided Ground Factor for Robust Localization of Delivery Robots in Complex
+            Urban Environments</span>
           <span class="pub-venue">IEEE International Conference on Robotics and Automation (ICRA)</span>
           <div class="pub-authors">Jooyong Park, Jungwoo Lee, Euncheol Choi, and Younggun Cho</div>
           <div class="pub-links">
@@ -1213,65 +1508,70 @@
 
         <div class="pub-item">
           <!--24-03-10-->
-          <span class="pub-title">Style Blind Domain Generalized Semantic Segmentation via Covariance Alignment and Semantic Consistence Contrastive Learning</span>
-          <span class="pub-venue">Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)</span>
+          <span class="pub-title">Style Blind Domain Generalized Semantic Segmentation via Covariance Alignment and
+            Semantic Consistence Contrastive Learning</span>
+          <span class="pub-venue">Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition
+            (CVPR)</span>
           <div class="pub-authors">Woo-Jin Ahn, Geun-Yeong Yang, Hyun-Duck Choi, Myo-Taeg Lim</div>
           <div class="pub-links">
-            <a href="https://openaccess.thecvf.com/content/CVPR2024/papers/Ahn_Style_Blind_Domain_Generalized_Semantic_Segmentation_via_Covariance_Alignment_and_CVPR_2024_paper.pdf" target="_blank">[LINK]</a>
+            <a href="https://openaccess.thecvf.com/content/CVPR2024/papers/Ahn_Style_Blind_Domain_Generalized_Semantic_Segmentation_via_Covariance_Alignment_and_CVPR_2024_paper.pdf"
+              target="_blank">[LINK]</a>
           </div>
         </div>
-        
+
         <h3 class="year-header">2023</h3>
-          <div class="pub-item">
-            <!--23-06-08-->
-            <span class="pub-title">Learning off-road terrain traversability with self-supervisions only</span>
-            <span class="pub-venue">IEEE Robotics and Automation Letters (RA-L)</span>
-            <div class="pub-authors">Junwon Seo, Sungdae Sim, Inwook Shim</div>
-            <div class="pub-links">
-              <a href="https://ieeexplore.ieee.org/abstract/document/10146445" target="_blank">[LINK]</a>
-            </div>
+        <div class="pub-item">
+          <!--23-06-08-->
+          <span class="pub-title">Learning off-road terrain traversability with self-supervisions only</span>
+          <span class="pub-venue">IEEE Robotics and Automation Letters (RA-L)</span>
+          <div class="pub-authors">Junwon Seo, Sungdae Sim, Inwook Shim</div>
+          <div class="pub-links">
+            <a href="https://ieeexplore.ieee.org/abstract/document/10146445" target="_blank">[LINK]</a>
           </div>
-        
+        </div>
+
         <div class="pub-item">
           <!--23-05-15-->
-          <span class="pub-title">Convex geometric trajectory tracking using Lie algebraic MPC for autonomous marine vehicles</span>
+          <span class="pub-title">Convex geometric trajectory tracking using Lie algebraic MPC for autonomous marine
+            vehicles</span>
           <span class="pub-venue">IEEE Robotics and Automation Letters (RA-L)</span>
           <div class="pub-authors">Junwoo Jang, Sangli Teng, Maani Ghaffari</div>
           <div class="pub-links">
             <a href="https://ieeexplore.ieee.org/abstract/document/10301632" target="_blank">[LINK]</a>
           </div>
         </div>
-        
+
         <div class="pub-item">
           <!--23-01-06-->
-          <span class="pub-title">Scate: A scalable framework for self-supervised traversability estimation in unstructured environments</span>
+          <span class="pub-title">Scate: A scalable framework for self-supervised traversability estimation in
+            unstructured environments</span>
           <span class="pub-venue">IEEE Robotics and Automation Letters (RA-L)</span>
           <div class="pub-authors">Junwon Seo, Taekyung Kim, Kiho Kwak, Jihong Min, Inwook Shim</div>
           <div class="pub-links">
             <a href="https://ieeexplore.ieee.org/abstract/document/10007922" target="_blank">[LINK]</a>
           </div>
         </div>
-        
+
         <h3 class="year-header">~2022</h3>
-          <div class="pub-item">
-            <!--22-10-23-->
-            <span class="pub-title">Slide: Self-supervised lidar de-snowing through reconstruction difficulty</span>
-            <span class="pub-venue">European Conference on Computer Vision (ECCV)</span>
-            <div class="pub-authors">Gwangtak Bae, Byungjun Kim, Seongyong Ahn, Jihong Min, Inwook Shim</div>
-            <div class="pub-links">
-              <a href="https://link.springer.com/chapter/10.1007/978-3-031-19842-7_17" target="_blank">[LINK]</a>
-            </div>
+        <div class="pub-item">
+          <!--22-10-23-->
+          <span class="pub-title">Slide: Self-supervised lidar de-snowing through reconstruction difficulty</span>
+          <span class="pub-venue">European Conference on Computer Vision (ECCV)</span>
+          <div class="pub-authors">Gwangtak Bae, Byungjun Kim, Seongyong Ahn, Jihong Min, Inwook Shim</div>
+          <div class="pub-links">
+            <a href="https://link.springer.com/chapter/10.1007/978-3-031-19842-7_17" target="_blank">[LINK]</a>
           </div>
+        </div>
       </div>
     </section>
-    
+
     <!-- 로봇 -->
     <section class="section media" data-anchor="media">
       <div class="max-w-container">
         <!-- 위치 이동 -->
         <h1>Media</h1>
         <p class="desc">
-          Our Robots: 
+          Our Robots:
           <a href="https://www.booster.tech/" target="_blank" rel="noopener noreferrer">
             Booster K1 from Booster Robotics
           </a>
@@ -1288,7 +1588,7 @@
         </div>
       </div>
     </section> -->
-            <!-- 유튜브 북마크
+        <!-- 유튜브 북마크
                   수정 사항 : src에 마지막 IE_m4ILwg-4를 실제 자신의 동영상 ID를 넣어야 함  -->
         <!-- <div class="media-youtube-full">
           <div class="youtube-embed">
@@ -1302,14 +1602,15 @@
           </div>
         </div> -->
         <div class="media-grid">
-          <img src="img/twoK1_seatdown.jpeg" alt="Robot Photo" class="media-item" onerror="this.src='https://via.placeholder.com/360x640?text=Robot+Photo'">
-          
+          <img src="img/twoK1_seatdown.jpeg" alt="Robot Photo" class="media-item"
+            onerror="this.src='https://via.placeholder.com/360x640?text=Robot+Photo'">
+
           <video class="media-item" controls autoplay muted loop playsinline>
             <source src="two_k1.webm" type="video/webm">
             <source src="two_k1.mp4" type="video/mp4">
             Your browser does not support video.
           </video>
-          
+
           <video class="media-item" controls autoplay muted loop playsinline>
             <source src="K1_walking.webm" type="video/webm">
             <source src="K1_walking.mp4" type="video/mp4">
@@ -1332,19 +1633,23 @@
 
         <div class="lab-logos">
           <a href="https://sparolab.github.io" target="_blank" class="lab-link">
-            <img src="img/sparo.png" alt="Sparo Lab" class="sparo-logo" onerror="this.src='https://via.placeholder.com/80'">
+            <img src="img/sparo.png" alt="Sparo Lab" class="sparo-logo"
+              onerror="this.src='https://via.placeholder.com/80'">
             <span>SPARO Lab</span>
           </a>
           <a href="https://rcv-inha.notion.site/webhome" target="_blank" class="lab-link">
-            <img src="img/RCVLAB.png" alt="RCV Lab" class="rcv-logo" onerror="this.src='https://via.placeholder.com/80?text=RCV'">
+            <img src="img/RCVLAB.png" alt="RCV Lab" class="rcv-logo"
+              onerror="this.src='https://via.placeholder.com/80?text=RCV'">
             <span>RCV Lab</span>
           </a>
           <a href="https://artemis-inha.github.io/" target="_blank" class="lab-link">
-            <img src="https://artemis-inha.github.io/assets/images/logo.jpg" alt="Artemis Lab" onerror="this.src='https://via.placeholder.com/80?text=Artemis'">
+            <img src="https://artemis-inha.github.io/assets/images/logo.jpg" alt="Artemis Lab"
+              onerror="this.src='https://via.placeholder.com/80?text=Artemis'">
             <span>ARTEMIS Lab</span>
           </a>
           <a href="https://wjahn.github.io/rils/" target="_blank" class="lab-link">
-            <img src="https://wjahn.github.io/rils/assets/images/logo_inha.png" alt="RILS Lab" onerror="this.src='https://via.placeholder.com/80?text=RILS'">
+            <img src="https://wjahn.github.io/rils/assets/images/logo_inha.png" alt="RILS Lab"
+              onerror="this.src='https://via.placeholder.com/80?text=RILS'">
             <span>RILS Lab</span>
           </a>
         </div>
@@ -1356,8 +1661,8 @@
   <script>
     // 1. FullPage.js 초기화
     new fullpage('#fullpage', {
-      autoScrolling: true,
-      scrollOverflow: true,
+      autoScrolling: false,
+      scrollOverflow: false,
       fitToSection: false,
       // [수정] 'about'을 두 번째 순서에 추가했습니다.
       anchors: ['home', 'about', 'team', 'Publication', 'media', 'opensource', 'contact'],
@@ -1370,84 +1675,85 @@
     });
 
     // 2. Swiper 슬라이더 초기화
-    
+
     // PC 공통 설정
     const pcBreakpoint = {
-        901: {
-            slidesPerView: 5,
-            centeredSlides: false,
-            spaceBetween: 20,
-        }
+      901: {
+        slidesPerView: 5,
+        centeredSlides: false,
+        spaceBetween: 20,
+      }
     };
 
     // --- A. [NEW] About Section Slider ---
     // 이미지 2개가 부드럽게 교체되는 슬라이더입니다.
     new Swiper('.about-slider', {
-        loop: true,
-        effect: 'fade', // 부드럽게 겹치며 바뀌는 효과
-        fadeEffect: { crossFade: true },
-        autoplay: {
-            delay: 3000,
-            disableOnInteraction: false,
-        },
-        pagination: {
-            el: '.about-slider .swiper-pagination',
-            clickable: true,
-        },
+      loop: true,
+      effect: 'fade', // 부드럽게 겹치며 바뀌는 효과
+      fadeEffect: { crossFade: true },
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: '.about-slider .swiper-pagination',
+        clickable: true,
+      },
     });
 
     // --- B. Advisor Slider (Principal Investigator) ---
     const advisorSliderEl = document.querySelector('.advisor-slider');
     new Swiper(advisorSliderEl, {
-        observer: true,
-        observeParents: true,
-        watchOverflow: true,
-        loop: false,
-        slidesPerView: 'auto',
-        centeredSlides: true,
-        spaceBetween: 20,
-        pagination: {
-          el: advisorSliderEl.querySelector('.swiper-pagination'),
-          clickable: true,
-        },
-        navigation: {
-          nextEl: advisorSliderEl.parentElement.querySelector('.swiper-button-next'),
-          prevEl: advisorSliderEl.parentElement.querySelector('.swiper-button-prev'),
-        },
-        breakpoints: {
-            901: {
-                slidesPerView: 4,
-                centeredSlides: false,
-                spaceBetween: 20,
-            }
+      observer: true,
+      observeParents: true,
+      watchOverflow: true,
+      loop: false,
+      slidesPerView: 'auto',
+      centeredSlides: true,
+      spaceBetween: 20,
+      pagination: {
+        el: advisorSliderEl.querySelector('.swiper-pagination'),
+        clickable: true,
+      },
+      navigation: {
+        nextEl: advisorSliderEl.parentElement.querySelector('.swiper-button-next'),
+        prevEl: advisorSliderEl.parentElement.querySelector('.swiper-button-prev'),
+      },
+      breakpoints: {
+        901: {
+          slidesPerView: 4,
+          centeredSlides: false,
+          spaceBetween: 20,
         }
+      }
     });
 
     // --- C. Member Slider (Loop TRUE) ---
     const memberSliderEl = document.querySelector('.member-slider');
     new Swiper(memberSliderEl, {
-        observer: true,
-        observeParents: true,
-        loop: true,
-        autoplay: {
-          delay: 3000,
-          disableOnInteraction: false,
-          pauseOnMouseEnter: true,
-        },
-        centeredSlides: true,
-        slidesPerView: 'auto',
-        spaceBetween: 20,
-        centerInsufficientSlides: true,
-        pagination: {
-          el: memberSliderEl.querySelector('.swiper-pagination'),
-          clickable: true,
-        },
-        navigation: {
-          nextEl: memberSliderEl.parentElement.querySelector('.swiper-button-next'),
-          prevEl: memberSliderEl.parentElement.querySelector('.swiper-button-prev'),
-        },
-        breakpoints: pcBreakpoint
+      observer: true,
+      observeParents: true,
+      loop: true,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+      },
+      centeredSlides: true,
+      slidesPerView: 'auto',
+      spaceBetween: 20,
+      centerInsufficientSlides: true,
+      pagination: {
+        el: memberSliderEl.querySelector('.swiper-pagination'),
+        clickable: true,
+      },
+      navigation: {
+        nextEl: memberSliderEl.parentElement.querySelector('.swiper-button-next'),
+        prevEl: memberSliderEl.parentElement.querySelector('.swiper-button-prev'),
+      },
+      breakpoints: pcBreakpoint
     });
   </script>
 </body>
+
 </html>
