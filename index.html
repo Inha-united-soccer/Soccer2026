@@ -751,6 +751,14 @@
       /* Or center, depending on preference. Left matches design usually. */
     }
 
+    .media-youtube-full .sub-desc {
+      font-size: 1rem;
+      color: #777;
+      margin-top: -5px;
+      margin-bottom: 20px;
+      text-align: left;
+    }
+
     /* Media Item w/ Title Style */
     .media-card {
       display: flex;
@@ -1666,39 +1674,40 @@
       <p class="desc">
         Inha-United Qualification Video
       </p>
-      <div class="youtube-embed">
+      <p class="sub-desc">Coming Soon!</p>
+      <!-- <div class="youtube-embed">
         <iframe src="https://www.youtube.com/embed/IE_m4ILwg-4" title="Inha-United Qualification Video" frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen></iframe>
-      </div>
+      </div> -->
     </div>
     <div class="media-grid">
 
       <!-- Media 1 -->
       <div class="media-card">
+        <div class="media-title">Robot Maintenance</div>
         <img src="img/twoK1_seatdown.jpeg" alt="Robot Photo" class="media-item"
           onerror="this.src='https://via.placeholder.com/360x640?text=Robot+Photo'">
-        <div class="media-title">Robot Maintenance</div>
       </div>
 
       <!-- Media 2 -->
       <div class="media-card">
+        <div class="media-title">Dual Robot Walking</div>
         <video class="media-item" controls autoplay muted loop playsinline>
           <source src="two_k1.webm" type="video/webm">
           <source src="two_k1.mp4" type="video/mp4">
           Your browser does not support video.
         </video>
-        <div class="media-title">Dual Robot Walking</div>
       </div>
 
       <!-- Media 3 -->
       <div class="media-card">
+        <div class="media-title">Single Robot Walking</div>
         <video class="media-item" controls autoplay muted loop playsinline>
           <source src="K1_walking.webm" type="video/webm">
           <source src="K1_walking.mp4" type="video/mp4">
           Your browser does not support video.
         </video>
-        <div class="media-title">Single Robot Walking</div>
       </div>
 
     </div>
