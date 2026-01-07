@@ -52,10 +52,6 @@
       word-break: keep-all;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
       background-color: #f9f9f9;
       color: #333;
@@ -693,11 +689,6 @@
       padding-bottom: 60px !important;
     }
 
-    .section.media p.desc {
-      margin-bottom: 10px;
-      /* Reduced from default 25px */
-    }
-
     .media a {
       color: var(--primary-green);
       font-weight: 600;
@@ -743,8 +734,7 @@
     .media-youtube-full {
       width: 60%;
       /* 기존 100% -> 60%로 축소 (절반보다 조금 더 크게) */
-      margin: 0px auto 20px;
-      /* Reduced top margin from 10px to 0px */
+      margin: 10px auto 20px;
       /* auto로 중앙 정렬 */
     }
 
@@ -755,18 +745,10 @@
       font-weight: 700;
       /* Bold text */
       margin-bottom: 5px;
-      color: #333;
+      color: var(--dark-green);
       /* Optional: match theme color */
       text-align: left;
       /* Or center, depending on preference. Left matches design usually. */
-    }
-
-    .media-youtube-full .sub-desc {
-      font-size: 1rem;
-      color: #777;
-      margin-top: -5px;
-      margin-bottom: 20px;
-      text-align: left;
     }
 
     /* Media Item w/ Title Style */
@@ -822,14 +804,10 @@
     }
 
     .media-grid {
-      width: 60%;
-      /* Match youtube width */
-      margin: 0 auto;
-      /* Center alignment */
+      width: 100%;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 5px;
-      /* Reduced gap */
+      gap: 10px;
       align-items: stretch;
     }
 
@@ -870,8 +848,7 @@
         min-width: 0;
       }
 
-      .media-youtube-full,
-      .media-grid {
+      .media-youtube-full {
         width: 90% !important;
         /* 모바일에서는 좀 더 넓게 */
       }
@@ -1208,7 +1185,7 @@
 
   <div id="fullpage">
 
-    <section class="section home" data-anchor="home" id="home">
+    <section class="section home" data-anchor="home">
       <div class="max-w-container">
         <h1>Welcome!</h1>
         <p>We are <b>Inha-United@Soccer</b> ⚽️</p>
@@ -1218,7 +1195,7 @@
     </section>
 
     <!-- about section 추가 -->
-    <section class="section about" data-anchor="about" id="about">
+    <section class="section about" data-anchor="about">
       <div class="max-w-container about-content">
         <div class="about-text">
           <h1>About Inha-United</h1>
@@ -1252,7 +1229,7 @@
       </div>
     </section>
 
-    <section class="section team" data-anchor="team" id="team">
+    <section class="section team" data-anchor="team">
       <div class="max-w-container">
 
         <h2>Principal Investigator</h2>
@@ -1408,6 +1385,7 @@
                 </div>
               </div>
 
+              <!-- 새로 오시는 분 추가 필요-->
               <div class="swiper-slide">
                 <div class="team-member">
                   <img src="img/ajh.jpeg" alt="Jihun An" onerror="this.src='https://via.placeholder.com/90?text=JH'" />
@@ -1427,7 +1405,7 @@
       </div>
     </section>
 
-    <section class="section" data-anchor="research" id="research">
+    <section class="section" data-anchor="research">
       <h1>Publications</h1>
       <div class="max-w-container">
         <h3 class="year-header">2025</h3>
@@ -1660,7 +1638,7 @@
     </section>
 
     <!-- 로봇 -->
-    <section class="section media" data-anchor="media" id="media">
+    <section class="section media" data-anchor="media">
       <div class="max-w-container">
         <!-- 위치 이동 -->
         <h1>Media</h1>
@@ -1688,7 +1666,6 @@
       <p class="desc">
         Inha-United Qualification Video
       </p>
-      <p class="sub-desc">Coming Soon!</p>
       <!-- <div class="youtube-embed">
         <iframe src="https://www.youtube.com/embed/IE_m4ILwg-4" title="Inha-United Qualification Video" frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -1728,7 +1705,7 @@
   </div>
   </section>
 
-  <section class="section contact" data-anchor="contact" id="contact">
+  <section class="section contact" data-anchor="contact">
     <div class="max-w-container contact-container">
       <div class="contact-top">
         <h1>Contact</h1>
@@ -1773,7 +1750,7 @@
       scrollOverflow: false,
       fitToSection: false,
       // [수정] 'about'을 두 번째 순서에 추가했습니다.
-      anchors: ['home', 'about', 'team', 'research', 'media', 'opensource', 'contact'],
+      anchors: ['home', 'about', 'team', 'Publication', 'media', 'opensource', 'contact'],
       navigationTooltips: ['Home', 'About', 'People', 'Publication', 'Media', '', 'Contact'],
       navigation: true,
       showActiveTooltip: true,
