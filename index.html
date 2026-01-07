@@ -292,7 +292,8 @@
     }
 
     .about-text {
-      flex: 1.0;
+      flex: 1;
+      /* 50% width */
     }
 
     .about-text h1 {
@@ -315,9 +316,10 @@
     }
 
     .about-image {
-      flex: 1.2;
+      flex: 1;
+      /* 50% width */
       width: 100%;
-      max-width: 800px;
+      /* max-width 제거 또는 flex 비율에 맡김 */
       position: relative;
     }
 
@@ -1198,6 +1200,22 @@
     <!-- about section 추가 -->
     <section class="section about" data-anchor="about">
       <div class="max-w-container about-content">
+        <!-- [Modified] Image moved to Left -->
+        <div class="about-image">
+          <div class="swiper about-slider">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="img/inha-united.jpg" alt="Inha-United Team Photo 1">
+              </div>
+              <div class="swiper-slide">
+                <img src="img/soccer_team.jpeg" alt="Inha-United Team Photo 2">
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+
+        <!-- [Modified] Text moved to Right -->
         <div class="about-text">
           <h1>About Inha-United</h1>
           <p>Inha-United is a collaborative research team composed of four major robotics and artificial intelligence
@@ -1211,21 +1229,6 @@
           </p>
           <p>🔗 More information:</p>
           <a href="https://www.inha.ac.kr/">Inha University</a>
-          <a href="https://www.inha.ac.kr/">Inha University</a>
-        </div>
-        <!-- swiper로 변경해서 이미지 넘어가게끔 구현 -->
-        <div class="about-image">
-          <div class="swiper about-slider">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <img src="img/inha-united.jpg" alt="Inha-United Team Photo 1">
-              </div>
-              <div class="swiper-slide">
-                <img src="img/soccer_team.jpeg" alt="Inha-United Team Photo 2">
-              </div>
-            </div>
-            <div class="swiper-pagination"></div>
-          </div>
         </div>
       </div>
     </section>
