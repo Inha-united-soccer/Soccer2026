@@ -734,8 +734,36 @@
     .media-youtube-full {
       width: 60%;
       /* 기존 100% -> 60%로 축소 (절반보다 조금 더 크게) */
-      margin: 20px auto 32px;
+      margin: 10px auto 20px;
       /* auto로 중앙 정렬 */
+    }
+
+    /* YouTube 북마크에 설명 추가를 위해 */
+    .media-youtube-full .desc {
+      font-size: 1.5rem;
+      /* Larger font size */
+      font-weight: 700;
+      /* Bold text */
+      margin-bottom: 5px;
+      color: var(--dark-green);
+      /* Optional: match theme color */
+      text-align: left;
+      /* Or center, depending on preference. Left matches design usually. */
+    }
+
+    /* Media Item w/ Title Style */
+    .media-card {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .media-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #333;
+      text-align: left;
+      margin-top: 5px;
     }
 
     .youtube-embed {
@@ -1645,20 +1673,34 @@
       </div>
     </div>
     <div class="media-grid">
-      <img src="img/twoK1_seatdown.jpeg" alt="Robot Photo" class="media-item"
-        onerror="this.src='https://via.placeholder.com/360x640?text=Robot+Photo'">
 
-      <video class="media-item" controls autoplay muted loop playsinline>
-        <source src="two_k1.webm" type="video/webm">
-        <source src="two_k1.mp4" type="video/mp4">
-        Your browser does not support video.
-      </video>
+      <!-- Media 1 -->
+      <div class="media-card">
+        <img src="img/twoK1_seatdown.jpeg" alt="Robot Photo" class="media-item"
+          onerror="this.src='https://via.placeholder.com/360x640?text=Robot+Photo'">
+        <div class="media-title">Robot Maintenance</div>
+      </div>
 
-      <video class="media-item" controls autoplay muted loop playsinline>
-        <source src="K1_walking.webm" type="video/webm">
-        <source src="K1_walking.mp4" type="video/mp4">
-        Your browser does not support video.
-      </video>
+      <!-- Media 2 -->
+      <div class="media-card">
+        <video class="media-item" controls autoplay muted loop playsinline>
+          <source src="two_k1.webm" type="video/webm">
+          <source src="two_k1.mp4" type="video/mp4">
+          Your browser does not support video.
+        </video>
+        <div class="media-title">Dual Robot Walking</div>
+      </div>
+
+      <!-- Media 3 -->
+      <div class="media-card">
+        <video class="media-item" controls autoplay muted loop playsinline>
+          <source src="K1_walking.webm" type="video/webm">
+          <source src="K1_walking.mp4" type="video/mp4">
+          Your browser does not support video.
+        </video>
+        <div class="media-title">Single Robot Walking</div>
+      </div>
+
     </div>
   </div>
   </section>
