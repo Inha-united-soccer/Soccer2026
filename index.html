@@ -769,7 +769,8 @@
     .media-youtube-full {
       width: 60%;
       /* 기존 100% -> 60%로 축소 (절반보다 조금 더 크게) */
-      margin: 10px auto 20px;
+      margin: 0 auto 40px;
+      /* [Modified] Match media-card margin (0 auto) + bottom gap */
       /* auto로 중앙 정렬 */
     }
 
@@ -790,9 +791,7 @@
     .media-card {
       width: 60%;
       /* ⭐ 기준 폭 Match YouTube bookmark */
-      max-width: 900px;
-      /* PC에서 너무 커지지 않게 */
-      margin: 0 auto;
+      /* max-width 제거 (YouTube와 동일하게) */
       margin: 0 auto;
     }
 
@@ -1732,12 +1731,14 @@
 
       <!-- Media 3 -->
       <div class="media-card">
-        <div class="media-title">Single Robot Walking</div>
-        <video class="media-item" controls autoplay muted loop playsinline>
-          <source src="K1_walking.webm" type="video/webm">
-          <source src="K1_walking.mp4" type="video/mp4">
-          Your browser does not support video.
-        </video>
+        <div class="media-title">Set Piece</div>
+        <p class="sub-desc" style="padding-top: 5px; color: #777; font-size: 1rem;">Coming Soon!</p>
+      </div>
+
+      <!-- Media 4 -->
+      <div class="media-card">
+        <div class="media-title">K1 GoalKeeper Blocking</div>
+        <p class="sub-desc" style="padding-top: 5px; color: #777; font-size: 1rem;">Coming Soon!</p>
       </div>
 
     </div>
