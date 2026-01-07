@@ -818,10 +818,14 @@
     }
 
     .media-grid {
-      width: 100%;
+      width: 60%;
+      /* Match youtube width */
+      margin: 0 auto;
+      /* Center alignment */
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
+      gap: 5px;
+      /* Reduced gap */
       align-items: stretch;
     }
 
@@ -862,7 +866,8 @@
         min-width: 0;
       }
 
-      .media-youtube-full {
+      .media-youtube-full,
+      .media-grid {
         width: 90% !important;
         /* 모바일에서는 좀 더 넓게 */
       }
