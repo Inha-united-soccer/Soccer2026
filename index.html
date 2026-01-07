@@ -115,6 +115,21 @@
       color: var(--primary-green);
     }
 
+    /* 헤더에 학교 로고 추가 */
+    .header-logo-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      /* Space between logo and text */
+    }
+
+    .header-logo-group img {
+      height: 1.8rem;
+      /* Slightly larger than text for visual balance, or matching 1.5rem */
+      width: auto;
+      object-fit: contain;
+    }
+
     @media (max-width: 900px) {
       header {
         padding: 0 20px;
@@ -1116,7 +1131,10 @@
 
   <!-- 상위 헤더 구현 파트 -->
   <header>
-    <h1>Inha-United</h1>
+    <div class="header-logo-group">
+      <img src="img/inha_logo.png" alt="Inha University Logo">
+      <h1>Inha-United</h1>
+    </div>
     <nav>
       <a href="#home">Home</a>
       <a href="#about">About</a> <!-- About 섹션 추가 -->
