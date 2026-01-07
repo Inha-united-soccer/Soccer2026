@@ -282,6 +282,8 @@
 
     .about-content {
       display: flex;
+      flex-direction: row;
+      /* [Fix] Explicitly set to row to override max-w-container's column */
       align-items: center;
       justify-content: space-between;
       gap: 40px;
