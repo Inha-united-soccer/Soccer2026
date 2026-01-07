@@ -732,8 +732,10 @@
 
     /* YouTube 북마크 style 추가 */
     .media-youtube-full {
-      width: 100%;
-      margin: 20px 0 32px;
+      width: 60%;
+      /* 기존 100% -> 60%로 축소 (절반보다 조금 더 크게) */
+      margin: 20px auto 32px;
+      /* auto로 중앙 정렬 */
     }
 
     .youtube-embed {
@@ -783,7 +785,7 @@
 
     /* [수정 포인트] 사진(img)과 비디오(video) 공용 스타일 */
     .media-item {
-      width: 100%;
+      width: 60%;
       /* 3개가 한 줄에 나오도록 설정 */
       min-width: 0;
       max-width: none;
