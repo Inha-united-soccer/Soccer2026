@@ -295,10 +295,7 @@
     }
 
     .about-text {
-      flex: 1.4;
-      /* [Modified] Increase text width (70%) */
-      /* [Modified] Increased text width (60%) */
-      /* 50% width */
+      flex: 0 0 calc(50% - 15px);
     }
 
     .about-text h1 {
@@ -321,13 +318,8 @@
     }
 
     .about-image {
-      flex: 0.6;
-      /* [Modified] Reduce image column width (30%) */
-      /* [Modified] Reduced image column width (40%) */
-      /* 50% width */
-      max-width: 500px;
+      flex: 0 0 calc(50% - 15px);
       width: 100%;
-      /* max-width 제거 또는 flex 비율에 맡김 */
       position: relative;
     }
 
@@ -340,14 +332,7 @@
 
     .about-slider {
       width: 100%;
-      /* [Modified] Use full width of the narrower column */
-      /* [Modified] Increased relative width to fill narrow column */
-      /* [Modified] Reduce width to 80% */
-      margin: 0 auto;
-      /* [Modified] Center alignment */
-      /* height: 450px; Remove fixed height to prevent cutting */
       aspect-ratio: 16 / 10;
-      /* Set a default aspect ratio closer to standard photos */
       border-radius: 20px;
       overflow: hidden;
       box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
@@ -359,8 +344,6 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      /* [Revert] Use cover to fill the smaller box */
-      /* [Fix] Ensure image is NOT cut off */
       display: block;
     }
 
