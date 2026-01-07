@@ -52,6 +52,7 @@
       word-break: keep-all;
     }
 
+
     body {
       background-color: #f9f9f9;
       color: #333;
@@ -1757,6 +1758,32 @@
       credits: { enabled: false },
       // 슬라이더 영역에서 마우스 휠이 페이지 전환 대신 슬라이드 작동을 하도록 설정
       normalScrollElements: '.swiper, .media-grid, .research-list',
+    });
+
+    // [New] Custom Smooth Scroll handling to replace native IDs (which caused jumps)
+    document.querySelectorAll('nav a').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        // Check if it's an anchor link #...
+        if (href.startsWith('#')) {
+          e.preventDefault();
+          const targetAnchor = href.substring(1); // remove #
+          // Find section by data-anchor
+          const targetSection = document.querySelector(`.section[data-anchor="${targetAnchor}"]`);
+
+          if (targetSection) {
+            // Calculate position with offset for header
+            const headerHeight = 80; // Approximate header height
+            const elementPosition = targetSection.getBoundingClientRect().top + window.scrollY;
+            const offsetPosition = elementPosition - headerHeight;
+
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: "smooth"
+            });
+          }
+        }
+      });
     });
 
     // 2. Swiper 슬라이더 초기화
