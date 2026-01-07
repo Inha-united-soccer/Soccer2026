@@ -357,6 +357,30 @@
       background: var(--primary-green);
     }
 
+    .about-links-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      /* 요소 사이 간격 */
+      flex-wrap: wrap;
+      /* 모바일에서 줄바꿈 허용 */
+    }
+
+    .about-links-row p {
+      margin: 0;
+      /* p 기본 margin 제거 */
+    }
+
+    .about-link {
+      color: var(--primary-green);
+      font-weight: 500;
+      text-decoration: none;
+    }
+
+    .about-link:hover {
+      text-decoration: underline;
+    }
+
     /* =========================================
        [Mobile] 모바일 전용 레이아웃 최적화 
        ========================================= */
@@ -1235,9 +1259,11 @@
             based on camera-based visual perception and localization, learning-based control, and Behavior-Tree based
             decision-making architectures.
           </p>
-          <p>🔗 More information:</p>
-          <a href="https://github.com/Inha-united-soccer">github</a>
-          <a href="https://www.youtube.com/@Inha-United_Soccer">youtube</a>
+          <div class="about-links-row">
+            <p>🔗 More information:</p>
+            <a href="https://github.com/Inha-united-soccer" class="about-link">github</a>
+            <a href="https://www.youtube.com/@Inha-United_Soccer" class="about-link">youtube</a>
+          </div>
         </div>
       </div>
     </section>
