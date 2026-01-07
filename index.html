@@ -138,6 +138,11 @@
       min-height: calc(var(--vh, 1vh) * 100);
       padding: 0 20px;
       position: relative;
+      min-height: calc(var(--vh, 1vh) * 100);
+      height: auto !important;
+      /* Force auto height to prevent overlap */
+      padding: 0 20px;
+      position: relative;
       /* overflow: hidden; */
     }
 
@@ -966,6 +971,12 @@
         height: auto !important;
       }
 
+      .fp-tableCell {
+        height: auto !important;
+      }
+
+      /* Global fix for all sections */
+
       /* 1. 슬라이더 영역 여백 및 잘림 방지 */
       .swiper.team-slider {
         width: 100%;
@@ -1585,12 +1596,12 @@
             <source src="IMG_6071.mp4" type="video/mp4">
             Your browser does not support video.
           </video>
-        </div>
+        </div> -->
       </div>
-    </section> -->
-        <!-- 유튜브 북마크
+    </section>
+    <!-- 유튜브 북마크
                   수정 사항 : src에 마지막 IE_m4ILwg-4를 실제 자신의 동영상 ID를 넣어야 함  -->
-        <!-- <div class="media-youtube-full">
+    <!-- <div class="media-youtube-full">
           <div class="youtube-embed">
             <iframe
               src="https://www.youtube.com/embed/IE_m4ILwg-4"
@@ -1601,61 +1612,61 @@
             ></iframe>
           </div>
         </div> -->
-        <div class="media-grid">
-          <img src="img/twoK1_seatdown.jpeg" alt="Robot Photo" class="media-item"
-            onerror="this.src='https://via.placeholder.com/360x640?text=Robot+Photo'">
+    <div class="media-grid">
+      <img src="img/twoK1_seatdown.jpeg" alt="Robot Photo" class="media-item"
+        onerror="this.src='https://via.placeholder.com/360x640?text=Robot+Photo'">
 
-          <video class="media-item" controls autoplay muted loop playsinline>
-            <source src="two_k1.webm" type="video/webm">
-            <source src="two_k1.mp4" type="video/mp4">
-            Your browser does not support video.
-          </video>
+      <video class="media-item" controls autoplay muted loop playsinline>
+        <source src="two_k1.webm" type="video/webm">
+        <source src="two_k1.mp4" type="video/mp4">
+        Your browser does not support video.
+      </video>
 
-          <video class="media-item" controls autoplay muted loop playsinline>
-            <source src="K1_walking.webm" type="video/webm">
-            <source src="K1_walking.mp4" type="video/mp4">
-            Your browser does not support video.
-          </video>
+      <video class="media-item" controls autoplay muted loop playsinline>
+        <source src="K1_walking.webm" type="video/webm">
+        <source src="K1_walking.mp4" type="video/mp4">
+        Your browser does not support video.
+      </video>
+    </div>
+  </div>
+  </section>
+
+  <section class="section contact" data-anchor="contact">
+    <div class="max-w-container contact-container">
+      <div class="contact-top">
+        <h1>Contact</h1>
+        <div class="footer-info">
+          <!-- 주소 변경 필요 -->
+          <p>📧 <a href="mailto:inharobocupsoccer@gmail.com">inharobocupsoccer@gmail.com</a></p>
+          <p>📍 Inha University, 100 Inha-ro, Michuhol-gu, Incheon, South Korea</p>
         </div>
       </div>
-    </section>
 
-    <section class="section contact" data-anchor="contact">
-      <div class="max-w-container contact-container">
-        <div class="contact-top">
-          <h1>Contact</h1>
-          <div class="footer-info">
-            <!-- 주소 변경 필요 -->
-            <p>📧 <a href="mailto:inharobocupsoccer@gmail.com">inharobocupsoccer@gmail.com</a></p>
-            <p>📍 Inha University, 100 Inha-ro, Michuhol-gu, Incheon, South Korea</p>
-          </div>
-        </div>
-
-        <div class="lab-logos">
-          <a href="https://sparolab.github.io" target="_blank" class="lab-link">
-            <img src="img/sparo.png" alt="Sparo Lab" class="sparo-logo"
-              onerror="this.src='https://via.placeholder.com/80'">
-            <span>SPARO Lab</span>
-          </a>
-          <a href="https://rcv-inha.notion.site/webhome" target="_blank" class="lab-link">
-            <img src="img/RCVLAB.png" alt="RCV Lab" class="rcv-logo"
-              onerror="this.src='https://via.placeholder.com/80?text=RCV'">
-            <span>RCV Lab</span>
-          </a>
-          <a href="https://artemis-inha.github.io/" target="_blank" class="lab-link">
-            <img src="https://artemis-inha.github.io/assets/images/logo.jpg" alt="Artemis Lab"
-              onerror="this.src='https://via.placeholder.com/80?text=Artemis'">
-            <span>ARTEMIS Lab</span>
-          </a>
-          <a href="https://wjahn.github.io/rils/" target="_blank" class="lab-link">
-            <img src="https://wjahn.github.io/rils/assets/images/logo_inha.png" alt="RILS Lab"
-              onerror="this.src='https://via.placeholder.com/80?text=RILS'">
-            <span>RILS Lab</span>
-          </a>
-        </div>
-
+      <div class="lab-logos">
+        <a href="https://sparolab.github.io" target="_blank" class="lab-link">
+          <img src="img/sparo.png" alt="Sparo Lab" class="sparo-logo"
+            onerror="this.src='https://via.placeholder.com/80'">
+          <span>SPARO Lab</span>
+        </a>
+        <a href="https://rcv-inha.notion.site/webhome" target="_blank" class="lab-link">
+          <img src="img/RCVLAB.png" alt="RCV Lab" class="rcv-logo"
+            onerror="this.src='https://via.placeholder.com/80?text=RCV'">
+          <span>RCV Lab</span>
+        </a>
+        <a href="https://artemis-inha.github.io/" target="_blank" class="lab-link">
+          <img src="https://artemis-inha.github.io/assets/images/logo.jpg" alt="Artemis Lab"
+            onerror="this.src='https://via.placeholder.com/80?text=Artemis'">
+          <span>ARTEMIS Lab</span>
+        </a>
+        <a href="https://wjahn.github.io/rils/" target="_blank" class="lab-link">
+          <img src="https://wjahn.github.io/rils/assets/images/logo_inha.png" alt="RILS Lab"
+            onerror="this.src='https://via.placeholder.com/80?text=RILS'">
+          <span>RILS Lab</span>
+        </a>
       </div>
-    </section>
+
+    </div>
+  </section>
   </div>
 
   <script>
